@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RetailAI Solution Cost Estimate</title>
+<style>
+  :root { --navy:#101c35; --blue:#2563eb; --sky:#eaf2ff; --red:#e31837; --ink:#182235; --muted:#5f6b7a; --line:#d8e0ea; --green:#08785b; --amber:#a86000; }
+  * { box-sizing:border-box; }
+  @page { size:A4; margin:16mm 15mm 16mm; }
+  body { margin:0; font-family:"Segoe UI",Arial,sans-serif; color:var(--ink); font-size:10.2pt; line-height:1.42; background:#fff; }
+  .cover { min-height:260mm; padding:22mm 12mm; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(145deg,var(--navy) 0%,#183563 68%,#244f90 100%); color:white; page-break-after:always; }
+  .brand { font-size:14pt; font-weight:700; letter-spacing:.6px; }
+  .brand span { color:#ff4963; }
+  .eyebrow { margin-top:36mm; text-transform:uppercase; letter-spacing:2px; font-size:9pt; opacity:.8; }
+  h1 { font-size:35pt; line-height:1.03; margin:7mm 0 5mm; max-width:145mm; }
+  .subtitle { font-size:15pt; max-width:145mm; color:#d9e8ff; }
+  .cover-card { border-left:4px solid #ff4963; background:rgba(255,255,255,.09); padding:6mm; max-width:145mm; }
+  .cover-meta { font-size:9pt; color:#c8d7ee; }
+  .page { page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .header { border-bottom:2px solid var(--navy); padding-bottom:3mm; margin-bottom:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  h2 { margin:0; font-size:21pt; color:var(--navy); }
+  h3 { font-size:13pt; color:var(--navy); margin:6mm 0 2.5mm; }
+  h4 { font-size:10.5pt; margin:4mm 0 1mm; color:var(--blue); }
+  p { margin:0 0 3mm; }
+  .muted { color:var(--muted); }
+  .small { font-size:8.3pt; }
+  .kpis { display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; margin:5mm 0 7mm; }
+  .kpi { border:1px solid var(--line); border-top:4px solid var(--blue); border-radius:4px; padding:5mm; }
+  .kpi strong { display:block; font-size:20pt; color:var(--navy); }
+  .kpi span { color:var(--muted); font-size:8.5pt; }
+  .callout { background:var(--sky); border-left:4px solid var(--blue); padding:4mm 5mm; margin:4mm 0; }
+  .warning { background:#fff5e6; border-left-color:#e08a00; }
+  .success { background:#eaf8f3; border-left-color:var(--green); }
+  table { width:100%; border-collapse:collapse; margin:3mm 0 5mm; font-size:8.6pt; }
+  th { background:var(--navy); color:white; padding:2.5mm 2mm; text-align:left; vertical-align:top; }
+  td { border-bottom:1px solid var(--line); padding:2.4mm 2mm; vertical-align:top; }
+  tr:nth-child(even) td { background:#f7f9fc; }
+  .money { text-align:right; white-space:nowrap; }
+  .tag { display:inline-block; border-radius:12px; padding:1mm 2.5mm; font-size:7.5pt; font-weight:700; background:#e8efff; color:#1f55b5; }
+  .tag.optional { background:#fff0d9; color:#8a5000; }
+  .tag.current { background:#e5f7ef; color:#08785b; }
+  ul,ol { margin:2mm 0 4mm 5mm; padding-left:4mm; }
+  li { margin:1.2mm 0; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:7mm; }
+  .checklist { list-style:none; padding:0; margin-left:0; }
+  .checklist li { position:relative; padding-left:6mm; margin:2.2mm 0; }
+  .checklist li:before { content:"✓"; position:absolute; left:0; color:var(--green); font-weight:800; }
+  .formula { font-family:Consolas,monospace; background:#f3f6fa; border:1px solid var(--line); padding:3mm; font-size:8.5pt; }
+  .footer-note { margin-top:6mm; padding-top:3mm; border-top:1px solid var(--line); font-size:7.8pt; color:var(--muted); }
+  .source-list { font-size:8pt; word-break:break-word; }
+  .roadmap { display:grid; grid-template-columns:repeat(4,1fr); gap:2mm; margin-top:3mm; }
+  .phase { background:#f4f7fb; border-top:3px solid var(--blue); padding:3mm; min-height:28mm; }
+  .phase b { display:block; color:var(--navy); margin-bottom:1mm; }
+  .no-break { page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<section class="cover">
+  <div>
+    <div class="brand">Retail<span>AI</span> Cost View</div>
+    <div class="eyebrow">Independent planning estimate</div>
+    <h1>Retail Fashion AI Solution<br>Cost Estimate</h1>
+    <div class="subtitle">Indicative implementation and monthly operating costs for a retailer such as Mr Price Group or TFG</div>
+  </div>
+  <div>
+    <div class="cover-card"><b>Scope:</b> the existing RetailAI prototype architecture, plus clearly identified enterprise production requirements. This report is informational only and does not modify the solution.</div>
+    <div class="cover-meta" style="margin-top:8mm">Prepared 9 September 2026 · Currency: USD with indicative ZAR conversion at R18.00/USD · Excludes VAT</div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="header"><h2>Executive estimate</h2><span class="muted">Decision view</span></div>
+  <p>The existing solution is a five-agent retail intelligence application built on Microsoft Foundry and hosted as a lightweight Azure container. Its cloud infrastructure is modest; AI inference, implementation effort, data integration and social-listening licences are the main cost drivers.</p>
+  <div class="kpis">
+    <div class="kpi"><strong>$430/mo</strong><span>Indicative pilot budget after 20% contingency<br>≈ R7,740/month</span></div>
+    <div class="kpi"><strong>$1,600/mo</strong><span>Indicative departmental production budget<br>≈ R28,800/month</span></div>
+    <div class="kpi"><strong>$6,000/mo</strong><span>Indicative larger rollout budget<br>≈ R108,000/month</span></div>
+  </div>
+  <div class="callout success"><b>Recommended planning position:</b> budget <b>$1,300–$2,000 per month</b> (about <b>R23,400–R36,000</b>) for a controlled departmental deployment of roughly 25,000 user interactions per month, excluding third-party social-listening licences and internal support staff.</div>
+  <h3>Monthly scenario summary</h3>
+  <table>
+    <thead><tr><th>Scenario</th><th>Assumed usage</th><th class="money">Model + file search</th><th class="money">Azure platform</th><th class="money">Subtotal</th><th class="money">Budget incl. 20%</th></tr></thead>
+    <tbody>
+      <tr><td><b>Pilot</b></td><td>5,000 interactions; light business-hours use</td><td class="money">$243</td><td class="money">$116</td><td class="money">$359</td><td class="money"><b>$430 / R7,740</b></td></tr>
+      <tr><td><b>Department</b></td><td>25,000 interactions; regular analyst and marketing use</td><td class="money">$1,213</td><td class="money">$120</td><td class="money">$1,333</td><td class="money"><b>$1,600 / R28,800</b></td></tr>
+      <tr><td><b>Larger rollout</b></td><td>100,000 interactions; heavier use and more active replicas</td><td class="money">$4,850</td><td class="money">$155</td><td class="money">$5,005</td><td class="money"><b>$6,000 / R108,000</b></td></tr>
+    </tbody>
+  </table>
+  <h3>One-time implementation</h3>
+  <table>
+    <thead><tr><th>Delivery level</th><th>Typical scope</th><th>Effort assumption</th><th class="money">Estimated services</th></tr></thead>
+    <tbody>
+      <tr><td><b>Pilot adaptation</b></td><td>Branding, retailer data mapping, Foundry setup, security review, deployment, UAT and training</td><td>40–80 person-days</td><td class="money"><b>$32k–$96k<br>R576k–R1.73m</b></td></tr>
+      <tr><td><b>Enterprise production</b></td><td>Automated integrations, persistent data layer, SSO/RBAC, monitoring, DR, security hardening, performance testing and change management</td><td>135–220 person-days</td><td class="money"><b>$108k–$264k<br>R1.94m–R4.75m</b></td></tr>
+    </tbody>
+  </table>
+  <div class="footer-note">Professional-services estimate uses a blended delivery rate of $800–$1,200 per person-day. Actual internal or partner rates, procurement terms, scope and assurance requirements may materially change the result.</div>
+</section>
+
+<section class="page">
+  <div class="header"><h2>What the solution uses</h2><span class="muted">Current architecture</span></div>
+  <table>
+    <thead><tr><th>Component</th><th>How it is used</th><th>Status</th><th>Cost basis</th></tr></thead>
+    <tbody>
+      <tr><td><b>Microsoft Foundry project</b></td><td>Hosts the agent definitions, model deployment and agent runtime.</td><td><span class="tag current">Current</span></td><td>Project itself is not the main charge; model tokens and tools are metered.</td></tr>
+      <tr><td><b>Five Foundry agents</b></td><td>Concierge plus Campaign, Sentiment, Analytics and Portfolio specialists.</td><td><span class="tag current">Current</span></td><td>Each user request can cause two or more model calls.</td></tr>
+      <tr><td><b>GPT-4o</b></td><td>Default model in the backend when loading agent definitions.</td><td><span class="tag current">Current</span></td><td>$2.50/1M input tokens and $10/1M output tokens for Global Standard.</td></tr>
+      <tr><td><b>File Search + vector stores</b></td><td>Four isolated specialist knowledge stores built from campaign, sentiment, analytics and portfolio files.</td><td><span class="tag current">Current</span></td><td>$2.50/1,000 Responses API file-search calls; $0.11/GB/day, first 1 GB free.</td></tr>
+      <tr><td><b>Azure Container Apps</b></td><td>Runs the Node.js/Express application at 0.5 vCPU and 1 GiB; scales from 0 to 3 replicas.</td><td><span class="tag current">Current IaC</span></td><td>Environment management plus per-second active compute and requests.</td></tr>
+      <tr><td><b>Azure Container Registry Basic</b></td><td>Stores the production Docker image; managed identity pulls the image.</td><td><span class="tag current">Current IaC</span></td><td>$0.1666/day plus storage above included allowance.</td></tr>
+      <tr><td><b>Log Analytics</b></td><td>Container logs with 30-day retention.</td><td><span class="tag current">Current IaC</span></td><td>$3.36/GB ingestion in South Africa North; retention assumptions apply.</td></tr>
+      <tr><td><b>Microsoft Entra ID</b></td><td>Managed identity and Azure AI User RBAC for server-to-Foundry authentication.</td><td><span class="tag current">Current</span></td><td>No separate workload identity charge assumed; tenant licensing can vary.</td></tr>
+      <tr><td><b>Static web UI + Express API</b></td><td>Single container serves the website and `/api/chat`; Node.js 22, Express, Azure SDK and Docker.</td><td><span class="tag current">Current</span></td><td>Open-source software; hosting included above.</td></tr>
+      <tr><td><b>Bicep + Azure Developer CLI</b></td><td>Infrastructure-as-code provisioning and deployment.</td><td><span class="tag current">Current</span></td><td>No licence charge.</td></tr>
+      <tr><td><b>Microsoft Teams app manifest</b></td><td>Optional personal and configurable tabs for the hosted web application.</td><td><span class="tag optional">Prepared</span></td><td>Requires applicable Microsoft 365/Teams licensing.</td></tr>
+      <tr><td><b>Meta and social connectors</b></td><td>Signed Facebook/Instagram webhooks, approved TikTok or licensed-provider ingest; synthetic demo feed exists.</td><td><span class="tag optional">Optional</span></td><td>Provider licensing is excluded and can dominate total cost.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><b>Data grounding:</b> campaign briefs/calendar/performance, collaborator profiles, creator scores, customer sentiment, trends, seasonal calendar, product catalogue, KPI targets, customer intelligence, growth opportunities, portfolio applications and scoring rubric. The current package is file based; live enterprise systems are not yet integrated.</div>
+</section>
+
+<section class="page">
+  <div class="header"><h2>How the estimate works</h2><span class="muted">Transparent assumptions</span></div>
+  <h3>Per-interaction AI assumption</h3>
+  <p>A normal request is assumed to invoke the Concierge and one specialist: <b>two GPT-4o calls</b>. Across the two calls, the estimate allows <b>12,000 input tokens</b>, <b>1,600 output tokens</b>, and <b>one file-search tool call</b>.</p>
+  <div class="formula">Model cost = (12,000 ÷ 1,000,000 × $2.50) + (1,600 ÷ 1,000,000 × $10.00) = $0.0460<br>File-search call = $2.50 ÷ 1,000 = $0.0025<br><b>Estimated variable cost per interaction = $0.0485</b></div>
+  <p class="small muted" style="margin-top:2mm">Multi-domain requests can call several specialists and cost more. Shorter prompts, cached input or a smaller model can cost less.</p>
+  <h3>Azure platform unit rates used</h3>
+  <table>
+    <thead><tr><th>Meter</th><th>Published unit rate</th><th>Planning quantity</th><th class="money">Typical monthly amount</th></tr></thead>
+    <tbody>
+      <tr><td>Container Apps environment management</td><td>$0.146/hour</td><td>730 hours</td><td class="money">$106.58</td></tr>
+      <tr><td>Container Apps active compute</td><td>$0.000024/vCPU-second + $0.000003/GiB-second</td><td>0.5 vCPU, 1 GiB; usage varies</td><td class="money">$1–$43</td></tr>
+      <tr><td>Container Apps requests</td><td>$0.40/million requests</td><td>Low at these scenarios</td><td class="money">&lt;$1</td></tr>
+      <tr><td>Container Registry Basic</td><td>$0.1666/day</td><td>30.4 days</td><td class="money">$5.06</td></tr>
+      <tr><td>Log Analytics ingestion</td><td>$3.36/GB</td><td>1 GB/month baseline</td><td class="money">$3.36</td></tr>
+      <tr><td>Vector storage</td><td>$0.11/GB/day; first 1 GB free</td><td>Current small knowledge base assumed below free allowance</td><td class="money">$0</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warning"><b>Pricing caution:</b> public retail rates are estimates, not a quote. Region availability, EA/CSP discounts, model version, deployment type, data-zone requirements, free grants and price changes affect the invoice. The Container Apps environment meter should be validated in the retailer’s Azure Pricing Calculator before approval.</div>
+  <h3>Not included in the monthly totals</h3>
+  <div class="two-col">
+    <ul><li>VAT, exchange-rate movement and enterprise support plan</li><li>Licensed social-listening platform or paid Meta/TikTok data</li><li>Microsoft 365/Teams licences already held by users</li><li>Internal support, product owner and data stewardship staff</li></ul>
+    <ul><li>Private networking, VPN/ExpressRoute and corporate DNS</li><li>API Management, Front Door/WAF, Key Vault operations</li><li>Persistent database/storage and production ETL pipelines</li><li>Disaster recovery in a second region</li></ul>
+  </div>
+</section>
+
+<section class="page">
+  <div class="header"><h2>What a retailer must have in place</h2><span class="muted">Adoption prerequisites</span></div>
+  <div class="two-col">
+    <div>
+      <h3>1. Azure foundation</h3>
+      <ul class="checklist"><li>Enterprise Azure subscription and approved landing zone</li><li>Microsoft Foundry project in an approved region</li><li>Quota for the selected GPT model and deployment type</li><li>Container Apps, Container Registry and Log Analytics permissions</li><li>Entra groups, managed identities and least-privilege RBAC</li><li>Budget alerts, tags and cost ownership</li></ul>
+      <h3>2. Data readiness</h3>
+      <ul class="checklist"><li>Named owners for campaign, product, customer, sentiment and portfolio data</li><li>Documented source systems, schemas and refresh frequency</li><li>Data-quality checks and stable customer/SKU/campaign identifiers</li><li>Approved handling of PII and commercially sensitive data</li><li>POPIA/GDPR retention, residency and deletion rules</li><li>Representative UAT dataset and expected-answer test set</li></ul>
+      <h3>3. Integration access</h3>
+      <ul class="checklist"><li>Read access or APIs for CRM/CDP, product/PIM, campaign and analytics platforms</li><li>Approved social provider contracts and webhook permissions if required</li><li>Corporate DNS, certificates and firewall allow-listing</li><li>Microsoft Teams admin approval if Teams distribution is required</li></ul>
+    </div>
+    <div>
+      <h3>4. Security and governance</h3>
+      <ul class="checklist"><li>AI use policy, acceptable-use controls and human approval points</li><li>Threat model, penetration test and prompt-injection controls</li><li>Secrets held in Key Vault; no production API keys in files</li><li>User authentication and role-based authorization for the application</li><li>Audit logging without unnecessary prompt or PII retention</li><li>Model/data risk assessment and responsible-AI review</li></ul>
+      <h3>5. Operations</h3>
+      <ul class="checklist"><li>CI/CD with dev, test and production environments</li><li>Monitoring for availability, latency, errors, tokens and cost</li><li>Incident response, support rota, SLOs and escalation path</li><li>Versioned agent prompts, model deployments and rollback</li><li>Automated knowledge refresh and backup/export process</li><li>Load, failover and recovery testing</li></ul>
+      <h3>6. People and process</h3>
+      <ul class="checklist"><li>Executive sponsor and accountable product owner</li><li>Retail marketing, analytics and portfolio subject-matter experts</li><li>Cloud/platform, security, data engineering and AI engineering capacity</li><li>Legal/privacy/procurement participation</li><li>User training, adoption metrics and feedback loop</li></ul>
+    </div>
+  </div>
+  <div class="callout warning"><b>Important gap before enterprise use:</b> the current social-signal store is in memory and business grounding is primarily packaged files. Production use should add durable storage, automated source-system ingestion, application user authentication/authorization, rate limiting and formal monitoring.</div>
+</section>
+
+<section class="page">
+  <div class="header"><h2>Production additions and cost levers</h2><span class="muted">Recommended, not currently deployed</span></div>
+  <h3>Likely production additions</h3>
+  <table>
+    <thead><tr><th>Addition</th><th>Why it is needed</th><th>Indicative cost effect</th></tr></thead>
+    <tbody>
+      <tr><td><b>Key Vault</b></td><td>Centralize and rotate social-provider secrets and any certificates.</td><td>Usually low, often under $5/month at modest transaction volumes.</td></tr>
+      <tr><td><b>Persistent data store</b></td><td>Retain approved social signals, user state, audit records and refresh metadata.</td><td>Typically $25–$300+/month depending on service, scale and resilience.</td></tr>
+      <tr><td><b>API gateway / WAF</b></td><td>Rate limiting, abuse protection, centralized policies and internet-edge security.</td><td>Roughly $50–$500+/month; premium enterprise tiers can be much higher.</td></tr>
+      <tr><td><b>Private networking</b></td><td>Meet enterprise network isolation and controlled-egress policies.</td><td>Can add $100–$1,000+/month plus implementation complexity.</td></tr>
+      <tr><td><b>Second environment / DR</b></td><td>Separate non-production from production and meet recovery objectives.</td><td>Replicates part or most of the fixed platform cost.</td></tr>
+      <tr><td><b>Licensed social listening</b></td><td>Legitimate access to social data at useful coverage and volume.</td><td>Vendor-specific; plan from $1,000 to $20,000+/month.</td></tr>
+    </tbody>
+  </table>
+  <h3>Best levers to control cost</h3>
+  <ol>
+    <li><b>Route simple work to a smaller model.</b> Keep GPT-4o for complex analysis while using a mini model for classification, routing and concise summaries.</li>
+    <li><b>Limit multi-agent fan-out.</b> Invoke only the necessary specialist and cap retries/tool calls.</li>
+    <li><b>Control prompt size.</b> Retrieve fewer, more relevant records; summarize conversation history; exploit cached input where supported.</li>
+    <li><b>Set output limits.</b> Default to decision-ready answers and require explicit user action for long reports.</li>
+    <li><b>Scale compute to zero.</b> Preserve the current 0–3 replica policy where latency requirements permit.</li>
+    <li><b>Track unit economics.</b> Dashboard cost per interaction, per active user, per agent and per business outcome.</li>
+  </ol>
+  <h3>Suggested delivery path</h3>
+  <div class="roadmap">
+    <div class="phase"><b>1 · Validate</b>2–3 weeks<br>Data fit, security, quota, KPIs, detailed calculator.</div>
+    <div class="phase"><b>2 · Pilot</b>4–8 weeks<br>One business team, controlled data, 5k interactions/month.</div>
+    <div class="phase"><b>3 · Harden</b>6–10 weeks<br>SSO, durable data, integrations, monitoring, CI/CD, testing.</div>
+    <div class="phase"><b>4 · Scale</b>Ongoing<br>More brands/teams, model routing, cost optimization and governance.</div>
+  </div>
+  <div class="callout success" style="margin-top:6mm"><b>Commercial recommendation:</b> approve a capped pilot envelope of <b>$50k–$100k implementation</b> plus <b>$500/month cloud consumption</b>. Require a detailed production business case after 6–8 weeks using measured token volumes, adoption, response quality and time saved.</div>
+</section>
+
+<section class="page">
+  <div class="header"><h2>Sources, caveats and next step</h2><span class="muted">As at 9 September 2026</span></div>
+  <h3>Repository evidence reviewed</h3>
+  <ul>
+    <li>Infrastructure definition: Azure Container Apps, ACR Basic, Log Analytics, managed identity, 0.5 vCPU/1 GiB and scale 0–3.</li>
+    <li>Application backend: Node.js/Express, Azure Identity, Azure AI Agents SDK, five configured agent roles and GPT-4o fallback.</li>
+    <li>Knowledge configuration: four isolated specialist vector stores and connected-agent routing.</li>
+    <li>Deployment assets: Dockerfile, Bicep, Azure Developer CLI configuration and Microsoft Teams manifest.</li>
+    <li>Integration documentation: signed Meta webhooks, approved-provider social ingest and synthetic feed.</li>
+  </ul>
+  <h3>Public pricing references</h3>
+  <div class="source-list">
+    <p><b>Azure OpenAI pricing:</b><br>https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/</p>
+    <p><b>Azure Retail Prices API data used via pricing service:</b> South Africa North rates for Azure Container Apps, Container Registry and Log Analytics, effective rates available on 9 September 2026.</p>
+    <p><b>Azure Pricing Calculator:</b><br>https://azure.microsoft.com/en-us/pricing/calculator/</p>
+  </div>
+  <h3>Key caveats</h3>
+  <ul>
+    <li>This is a planning estimate, not a Microsoft, implementation-partner or social-data-provider quotation.</li>
+    <li>Actual agent definitions may select a model or deployment type with different rates.</li>
+    <li>Token consumption is workload-specific. The interaction assumptions should be replaced with observed production telemetry.</li>
+    <li>ZAR amounts use a deliberately simple planning exchange rate of R18.00 per USD and exclude VAT.</li>
+    <li>Enterprise agreements, reserved/provisioned throughput, free grants and negotiated discounts are not modeled.</li>
+    <li>The names Mr Price and TFG are used only as examples of large fashion retailers; no claim is made about their internal systems or procurement rates.</li>
+  </ul>
+  <div class="callout"><b>Next step for a quote-quality estimate:</b> confirm region, model deployment, expected monthly users/interactions, average document size, retention, availability target, source-system integrations, social-listening provider and security/network pattern; then validate the result in the retailer’s signed-in Azure Pricing Calculator.</div>
+  <div style="margin-top:20mm;text-align:center;color:var(--muted);font-size:8.5pt">End of report · RetailAI Solution Cost Estimate</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,10 @@
+season_id,season,retail_moment,planning_lead_time_weeks,key_customer_behaviour,priority_channels,primary_business_goal,example_mr_price_action
+SEA-001,Summer,Summer,4,holiday buying,"Email, YouTube Shorts, Campus activations",improve sell-through,store window refresh
+SEA-002,Autumn,Autumn,4,cultural relevance,"Paid social, Instagram Reels, In-store displays",increase revenue,creator-led styling campaign
+SEA-003,Winter,Winter,4,campus refresh,"YouTube Shorts, Paid social, TikTok",improve campaign ROI,capsule collection launch
+SEA-004,Spring,Spring,12,occasion dressing,"YouTube Shorts, Website homepage, Email",increase revenue,capsule collection launch
+SEA-005,Back to Campus,Back to Campus,10,layering needs,"Email, Instagram Stories, YouTube Shorts",grow younger audience,creator-led styling campaign
+SEA-006,Holiday/Festive,Holiday/Festive,4,occasion dressing,"Instagram Reels, WhatsApp, Campus activations",improve campaign ROI,homepage trend takeover
+SEA-007,Heritage Month,Heritage Month,4,cultural relevance,"Website homepage, Paid social, Instagram Reels",reduce markdown risk,creator-led styling campaign
+SEA-008,Black Friday,Black Friday,12,layering needs,"Creator events, Campus activations, WhatsApp",improve campaign ROI,capsule collection launch
+SEA-009,Graduation/Occasionwear,Graduation/Occasionwear,4,holiday buying,"Creator events, YouTube Shorts, Email",increase revenue,capsule collection launch

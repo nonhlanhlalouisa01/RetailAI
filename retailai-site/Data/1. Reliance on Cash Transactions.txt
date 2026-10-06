@@ -1,0 +1,93 @@
+1. Reliance on Cash Transactions
+Mr Price Money and the Group largely operate in cash-preferred markets, which can limit the adoption and efficiency of digital payment solutions.
+Despite offering store credit and flexible payment plans, the heavy dependence on cash may hinder scalability in regions moving toward cashless transactions.
+Insight: Cash reliance is flagged as a potential weakness in both 
+1
+ and 
+1
+.
+
+
+2 Sources
+2. Credit Product Complexity and Customer Education
+Multiple account types (Store Card, StartUp, BiggerBuys, Lay-by) require customers to navigate payment durations, fees, and eligibility criteria.
+Customers often submit multiple accounts, leading to:
+Confusion across statements
+Service fee inefficiencies
+Insight: FAQs ( 
+1
+, 
+1
+) indicate repeated need for guidance and customer support for account management and credit products.
+
+
+2 Sources
+3. Regulatory and Credit Risk Compliance
+Mr Price Money operates under the South African National Credit Act, requiring proof of income, affordability assessment, and responsible lending.
+Pain points include:
+Customers unable to provide proper documentation
+Risk management to avoid defaults while maintaining lending growth
+Balancing financial inclusion with risk control is challenging ( 
+1
+, 
+1
+).
+
+
+2 Sources
+4. Digital Adoption and Online Shopping Integration
+While ecommerce and mobile-first strategies exist, user adoption rates remain limited compared to in-store transactions.
+Click-and-collect accounts for high online traffic (65% of online orders), but:
+Integration across multiple brands
+Seamless cross-division shopping
+remains complex ( 
+1
+, 
+1
+).
+
+
+2 Sources
+5. Market Competition and Credit Alternatives
+The South African financial services space is competitive, with a proliferation of alternative buy-now-pay-later platforms and fintech solutions.
+Mr Price Money needs to maintain convenience, affordability, and trust to compete effectively ( 
+1
+, 
+1
+).
+
+
+2 Sources
+6. Customer Experience and Account Management Friction
+Challenges include:
+Multiple cards/accounts per customer
+Consolidation of insurance and credit products
+Manual processes for migrating accounts
+These lead to potential friction in user experience and may increase service load on call centers and stores ( 
+1
+, 
+1
+).
+
+
+2 Sources
+7. Growth and Expansion Strain
+As Mr Price Money supports multiple brands and rapid expansion (new stores, credit offerings), scaling operations without compromising:
+Operational agility
+Customer service quality
+becomes a stress point for the business ( 
+1
+, 
+1
+).
+
+
+2 Sources
+Summary
+Mr Price Money’s core pain points are tied to cash dependence, product complexity, regulatory compliance, cross-channel operational friction, and customer experience management. While the division drives value through accessible credit and insurance, it faces strategic and operational strain in scaling financial services, educating customers, and digitizing payments while managing risk.
+These pain points inform the need for:
+Simplified account offerings and payment options.
+Enhanced customer education and support.
+Accelerated digital adoption.
+Integrated cross-brand account management for smoother UX.
+Careful risk management to maintain financial inclusion and profitability

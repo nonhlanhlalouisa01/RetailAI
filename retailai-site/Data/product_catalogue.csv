@@ -1,0 +1,211 @@
+product_id,product_name,category,trend_alignment,season,price_zar,estimated_unit_cost_zar,gross_margin_pct,stock_on_hand,weekly_sales_units,sell_through_pct,markdown_risk,recommended_action
+MRP-00001,Coastal Tops 1,Tops,Summer Crochet Edit,Spring,249.99,149.75,40.1,2193,183,58.8,Medium,reduce buy depth
+MRP-00002,Coastal Accessories 2,Accessories,Resort Neutrals,Winter,159.99,101.35,36.7,2703,447,47.3,High,reduce buy depth
+MRP-00003,Everyday Dresses 3,Dresses,Resort Neutrals,Spring,499.99,274.39,45.1,922,290,73.7,Low,reduce buy depth
+MRP-00004,Utility Bottoms 4,Bottoms,Street Smart Athleisure,Spring,399.99,197.2,50.7,1954,121,37.4,Medium,reduce buy depth
+MRP-00005,Active Footwear 5,Footwear,Affordable Occasionwear,Autumn,299.99,177.17,40.9,1505,365,80.6,High,hold
+MRP-00006,Coastal Outerwear 6,Outerwear,Back to Campus Fits,Holiday/Festive,499.99,292.86,41.4,562,249,40.6,Low,bundle
+MRP-00007,Coastal Denim 7,Denim,Retro Sport Luxe,Heritage Month,299.99,163.85,45.4,1812,195,54.0,High,test online first
+MRP-00008,Coastal Denim 8,Denim,Workwear Remix,Winter,129.99,73.13,43.7,1368,466,63.8,Medium,scale
+MRP-00009,Heritage Activewear 9,Activewear,Campus Sneaker Culture,Graduation/Occasionwear,159.99,101.99,36.3,2754,511,48.3,Medium,promote
+MRP-00010,Everyday Activewear 10,Activewear,Monochrome Essentials,Spring,129.99,60.97,53.1,1276,38,38.3,High,bundle
+MRP-00011,Luxe Denim 11,Denim,Relaxed Cargo Denim,Graduation/Occasionwear,349.99,203.03,42.0,2172,120,60.4,Medium,add creator styling content
+MRP-00012,Everyday Basics 12,Basics,Elevated Basics,Black Friday,249.99,143.66,42.5,2317,228,91.2,Low,test online first
+MRP-00013,Utility Dresses 13,Dresses,Heritage Style Drop,Autumn,79.99,44.27,44.7,1878,125,75.4,Low,hold
+MRP-00014,Active Occasionwear 14,Occasionwear,Minimalist Basics,Heritage Month,249.99,162.0,35.2,759,147,76.1,Low,add creator styling content
+MRP-00015,Active Tops 15,Tops,Local Culture Prints,Graduation/Occasionwear,249.99,143.1,42.8,769,336,90.4,Medium,bundle
+MRP-00016,Street Occasionwear 16,Occasionwear,Y2K Streetwear,Winter,399.99,270.66,32.3,3152,426,86.0,Medium,add creator styling content
+MRP-00017,Utility Denim 17,Denim,Minimalist Basics,Spring,129.99,65.96,49.3,3198,407,54.2,High,test online first
+MRP-00018,Street Outerwear 18,Outerwear,Oversized Knitwear,Autumn,299.99,160.88,46.4,1730,532,73.5,High,bundle
+MRP-00019,Street Activewear 19,Activewear,Monochrome Essentials,Black Friday,249.99,145.96,41.6,2680,371,80.9,High,promote
+MRP-00020,Utility Dresses 20,Dresses,Bold Graphic Tees,Back to Campus,159.99,90.2,43.6,1463,565,60.8,High,add creator styling content
+MRP-00021,Everyday Activewear 21,Activewear,Street Smart Athleisure,Summer,249.99,163.91,34.4,487,475,19.2,Low,promote
+MRP-00022,Coastal Activewear 22,Activewear,Coastal Summer Linen,Back to Campus,299.99,148.95,50.3,731,285,24.9,Medium,bundle
+MRP-00023,Essential Bottoms 23,Bottoms,Denim Revival,Spring,129.99,60.04,53.8,1838,98,70.1,Low,hold
+MRP-00024,Heritage Activewear 24,Activewear,Sustainable Denim Capsule,Black Friday,129.99,76.25,41.3,118,13,69.5,Low,add creator styling content
+MRP-00025,Campus Accessories 25,Accessories,Minimalist Basics,Heritage Month,129.99,72.78,44.0,445,109,25.6,Medium,bundle
+MRP-00026,Coastal Denim 26,Denim,Soft Tailoring Basics,Autumn,129.99,77.68,40.2,2252,581,18.6,High,hold
+MRP-00027,Coastal Activewear 27,Activewear,Denim Revival,Heritage Month,159.99,95.11,40.6,2603,458,81.6,Low,scale
+MRP-00028,Denim Denim 28,Denim,Relaxed Cargo Denim,Holiday/Festive,99.99,58.55,41.4,1838,327,76.5,Low,bundle
+MRP-00029,Active Bottoms 29,Bottoms,Earth Tone Basics,Back to Campus,399.99,235.29,41.2,3270,32,80.7,High,bundle
+MRP-00030,Denim Dresses 30,Dresses,Retro Sport Luxe,Back to Campus,499.99,283.59,43.3,2726,60,76.0,Low,promote
+MRP-00031,Active Accessories 31,Accessories,Affordable Quiet Luxury,Autumn,159.99,90.38,43.5,2243,17,91.0,Medium,hold
+MRP-00032,Heritage Accessories 32,Accessories,Summer Crochet Edit,Winter,499.99,273.39,45.3,3204,487,88.6,Low,scale
+MRP-00033,Everyday Occasionwear 33,Occasionwear,Sustainable Denim Capsule,Summer,79.99,40.82,49.0,3965,412,55.5,High,test online first
+MRP-00034,Denim Basics 34,Basics,Relaxed Cargo Denim,Autumn,299.99,164.22,45.3,2703,554,57.8,Low,bundle
+MRP-00035,Campus Bottoms 35,Bottoms,Heritage Style Drop,Winter,99.99,56.75,43.2,2277,339,46.9,High,add creator styling content
+MRP-00036,Campus Bottoms 36,Bottoms,Heritage Style Drop,Summer,299.99,185.36,38.2,1081,93,86.4,Low,promote
+MRP-00037,Coastal Occasionwear 37,Occasionwear,Affordable Occasionwear,Autumn,79.99,41.69,47.9,131,145,69.9,Low,promote
+MRP-00038,Essential Footwear 38,Footwear,Retro Sport Luxe,Winter,399.99,252.03,37.0,1603,134,73.5,Medium,test online first
+MRP-00039,Denim Bottoms 39,Bottoms,Relaxed Cargo Denim,Back to Campus,79.99,42.16,47.3,2225,70,37.5,High,test online first
+MRP-00040,Everyday Bottoms 40,Bottoms,Monochrome Essentials,Black Friday,349.99,198.61,43.3,3599,585,30.3,Low,bundle
+MRP-00041,Street Bottoms 41,Bottoms,Weekend Travel Fits,Spring,499.99,302.52,39.5,3114,526,18.2,Low,hold
+MRP-00042,Coastal Tops 42,Tops,Monochrome Essentials,Winter,249.99,134.52,46.2,3894,41,58.9,High,test online first
+MRP-00043,Utility Accessories 43,Accessories,Earth Tone Basics,Back to Campus,249.99,126.77,49.3,3463,84,60.3,Low,reduce buy depth
+MRP-00044,Everyday Tops 44,Tops,Festival Street Style,Heritage Month,159.99,101.59,36.5,362,481,82.1,Medium,bundle
+MRP-00045,Campus Bottoms 45,Bottoms,Workwear Remix,Back to Campus,349.99,158.14,54.8,2389,316,72.7,Low,promote
+MRP-00046,Campus Footwear 46,Footwear,Local Culture Prints,Graduation/Occasionwear,349.99,237.82,32.0,3194,256,29.1,Medium,scale
+MRP-00047,Everyday Dresses 47,Dresses,Workwear Remix,Holiday/Festive,249.99,149.06,40.4,85,390,80.8,High,bundle
+MRP-00048,Denim Bottoms 48,Bottoms,Winter Layering Essentials,Black Friday,399.99,270.44,32.4,325,150,70.7,Low,scale
+MRP-00049,Utility Dresses 49,Dresses,Weekend Travel Fits,Black Friday,399.99,218.0,45.5,3143,91,61.0,High,hold
+MRP-00050,Denim Accessories 50,Accessories,Sustainable Denim Capsule,Winter,499.99,290.29,41.9,1049,303,37.3,Medium,add creator styling content
+MRP-00051,Essential Accessories 51,Accessories,Minimalist Basics,Spring,249.99,130.78,47.7,385,212,28.1,High,scale
+MRP-00052,Utility Denim 52,Denim,Affordable Quiet Luxury,Heritage Month,129.99,71.94,44.7,574,553,44.5,Low,promote
+MRP-00053,Street Outerwear 53,Outerwear,Resort Neutrals,Winter,199.99,129.21,35.4,3387,316,79.2,High,reduce buy depth
+MRP-00054,Campus Tops 54,Tops,Winter Layering Essentials,Holiday/Festive,249.99,121.02,51.6,1703,530,21.6,Medium,bundle
+MRP-00055,Heritage Denim 55,Denim,Coastal Summer Linen,Graduation/Occasionwear,299.99,193.96,35.3,1103,101,52.2,Low,scale
+MRP-00056,Denim Tops 56,Tops,Utility Cargo Streetwear,Holiday/Festive,159.99,76.81,52.0,2891,91,61.1,Medium,add creator styling content
+MRP-00057,Luxe Bottoms 57,Bottoms,Coastal Summer Linen,Winter,99.99,49.54,50.5,456,344,27.1,Medium,scale
+MRP-00058,Denim Denim 58,Denim,Back to Campus Fits,Black Friday,499.99,274.81,45.0,200,396,68.6,Low,bundle
+MRP-00059,Luxe Dresses 59,Dresses,Back to Campus Fits,Winter,129.99,66.72,48.7,221,256,65.9,Medium,promote
+MRP-00060,Denim Basics 60,Basics,Monochrome Essentials,Winter,79.99,37.61,53.0,1797,209,65.6,High,hold
+MRP-00061,Utility Basics 61,Basics,Street Smart Athleisure,Black Friday,79.99,54.2,32.2,2310,501,43.5,High,reduce buy depth
+MRP-00062,Utility Footwear 62,Footwear,Soft Tailoring Basics,Spring,199.99,98.27,50.9,200,292,22.3,Medium,reduce buy depth
+MRP-00063,Coastal Footwear 63,Footwear,Relaxed Cargo Denim,Autumn,499.99,339.95,32.0,1095,251,37.7,High,scale
+MRP-00064,Coastal Dresses 64,Dresses,Local Culture Prints,Winter,299.99,159.48,46.8,1048,330,77.7,High,bundle
+MRP-00065,Active Occasionwear 65,Occasionwear,Coastal Summer Linen,Winter,249.99,166.98,33.2,2386,197,79.9,Medium,reduce buy depth
+MRP-00066,Everyday Outerwear 66,Outerwear,Festival Street Style,Spring,349.99,160.55,54.1,2544,229,19.5,Medium,scale
+MRP-00067,Coastal Footwear 67,Footwear,Back to Campus Fits,Holiday/Festive,499.99,248.16,50.4,3016,186,86.0,Medium,scale
+MRP-00068,Coastal Tops 68,Tops,Campus Sneaker Culture,Autumn,499.99,306.03,38.8,3547,543,81.7,Low,bundle
+MRP-00069,Utility Accessories 69,Accessories,Local Culture Prints,Winter,99.99,52.74,47.3,725,452,76.6,Medium,test online first
+MRP-00070,Active Footwear 70,Footwear,Festival Street Style,Holiday/Festive,399.99,243.8,39.0,994,184,46.0,High,test online first
+MRP-00071,Active Outerwear 71,Outerwear,Campus Sneaker Culture,Heritage Month,129.99,80.29,38.2,3564,586,20.4,High,bundle
+MRP-00072,Luxe Occasionwear 72,Occasionwear,Earth Tone Basics,Winter,499.99,236.97,52.6,1436,84,35.6,Medium,hold
+MRP-00073,Essential Bottoms 73,Bottoms,Elevated Basics,Spring,249.99,138.18,44.7,1102,74,43.9,Low,test online first
+MRP-00074,Denim Tops 74,Tops,Utility Cargo Streetwear,Winter,299.99,165.23,44.9,3703,428,54.5,Medium,bundle
+MRP-00075,Active Basics 75,Basics,Soft Tailoring Basics,Spring,99.99,64.06,35.9,746,467,23.5,Low,bundle
+MRP-00076,Street Tops 76,Tops,Active Street,Holiday/Festive,199.99,133.77,33.1,776,389,29.9,Low,reduce buy depth
+MRP-00077,Luxe Bottoms 77,Bottoms,Active Street,Summer,499.99,338.3,32.3,1846,173,62.9,Medium,hold
+MRP-00078,Campus Tops 78,Tops,Affordable Quiet Luxury,Heritage Month,249.99,124.31,50.3,2935,572,71.4,High,reduce buy depth
+MRP-00079,Street Outerwear 79,Outerwear,Tech Utility Jackets,Summer,199.99,103.68,48.2,1689,590,58.7,Medium,hold
+MRP-00080,Essential Tops 80,Tops,Denim Revival,Black Friday,79.99,43.86,45.2,897,104,19.9,Low,test online first
+MRP-00081,Essential Outerwear 81,Outerwear,Sustainable Denim Capsule,Heritage Month,349.99,225.42,35.6,2008,505,84.2,Medium,scale
+MRP-00082,Denim Basics 82,Basics,Soft Tailoring Basics,Holiday/Festive,129.99,69.59,46.5,844,461,21.3,Medium,promote
+MRP-00083,Coastal Outerwear 83,Outerwear,Earth Tone Basics,Autumn,199.99,115.95,42.0,431,357,77.8,Medium,add creator styling content
+MRP-00084,Denim Occasionwear 84,Occasionwear,Earth Tone Basics,Graduation/Occasionwear,399.99,185.61,53.6,1794,553,68.8,Medium,reduce buy depth
+MRP-00085,Everyday Dresses 85,Dresses,Monochrome Essentials,Graduation/Occasionwear,199.99,93.63,53.2,2419,534,77.2,High,reduce buy depth
+MRP-00086,Coastal Denim 86,Denim,Affordable Quiet Luxury,Spring,349.99,171.41,51.0,3391,202,27.3,Medium,scale
+MRP-00087,Essential Accessories 87,Accessories,Winter Layering Essentials,Holiday/Festive,129.99,83.43,35.8,3810,73,24.4,High,promote
+MRP-00088,Everyday Basics 88,Basics,Active Street,Graduation/Occasionwear,199.99,113.9,43.0,3281,434,26.3,Low,hold
+MRP-00089,Street Occasionwear 89,Occasionwear,Local Culture Prints,Autumn,499.99,312.21,37.6,2384,108,76.1,High,bundle
+MRP-00090,Active Accessories 90,Accessories,Y2K Streetwear,Black Friday,299.99,180.17,39.9,233,181,38.4,Low,reduce buy depth
+MRP-00091,Utility Occasionwear 91,Occasionwear,Tech Utility Jackets,Spring,299.99,137.67,54.1,281,491,86.1,Medium,scale
+MRP-00092,Luxe Footwear 92,Footwear,Elevated Basics,Autumn,199.99,104.3,47.8,3639,238,27.9,High,promote
+MRP-00093,Street Footwear 93,Footwear,Y2K Streetwear,Spring,299.99,176.74,41.1,1889,221,85.6,Medium,test online first
+MRP-00094,Everyday Activewear 94,Activewear,Relaxed Cargo Denim,Graduation/Occasionwear,399.99,259.77,35.1,3321,167,22.9,High,reduce buy depth
+MRP-00095,Everyday Accessories 95,Accessories,Campus Sneaker Culture,Winter,399.99,260.89,34.8,869,210,79.9,Low,scale
+MRP-00096,Essential Activewear 96,Activewear,Utility Cargo Streetwear,Holiday/Festive,249.99,153.01,38.8,3453,480,55.4,High,scale
+MRP-00097,Luxe Tops 97,Tops,Earth Tone Basics,Winter,249.99,140.6,43.8,3645,490,61.4,Medium,bundle
+MRP-00098,Street Denim 98,Denim,Elevated Basics,Back to Campus,199.99,124.45,37.8,192,400,21.7,High,add creator styling content
+MRP-00099,Campus Dresses 99,Dresses,Summer Crochet Edit,Back to Campus,159.99,95.82,40.1,2748,424,56.0,High,scale
+MRP-00100,Active Activewear 100,Activewear,Back to Campus Fits,Summer,129.99,77.85,40.1,996,263,63.0,Medium,test online first
+MRP-00101,Luxe Outerwear 101,Outerwear,Bold Graphic Tees,Back to Campus,299.99,193.75,35.4,973,482,40.4,High,add creator styling content
+MRP-00102,Heritage Occasionwear 102,Occasionwear,Soft Tailoring Basics,Holiday/Festive,499.99,236.76,52.6,2379,294,40.1,Low,promote
+MRP-00103,Essential Bottoms 103,Bottoms,Active Street,Back to Campus,199.99,119.46,40.3,2767,310,31.9,High,add creator styling content
+MRP-00104,Active Dresses 104,Dresses,Weekend Travel Fits,Heritage Month,79.99,50.81,36.5,2785,332,68.4,High,scale
+MRP-00105,Denim Activewear 105,Activewear,Heritage Style Drop,Heritage Month,199.99,131.71,34.1,3097,41,61.1,High,add creator styling content
+MRP-00106,Luxe Dresses 106,Dresses,Active Street,Holiday/Festive,159.99,97.25,39.2,2157,312,80.6,High,reduce buy depth
+MRP-00107,Essential Denim 107,Denim,Heritage Style Drop,Graduation/Occasionwear,99.99,55.82,44.2,3204,192,88.1,Medium,test online first
+MRP-00108,Essential Bottoms 108,Bottoms,Earth Tone Basics,Heritage Month,249.99,125.34,49.9,3308,344,45.5,High,bundle
+MRP-00109,Active Activewear 109,Activewear,Summer Crochet Edit,Autumn,99.99,55.82,44.2,2014,204,55.0,High,promote
+MRP-00110,Coastal Basics 110,Basics,Heritage Style Drop,Winter,299.99,138.73,53.8,900,355,48.3,High,promote
+MRP-00111,Luxe Denim 111,Denim,Active Street,Holiday/Festive,129.99,81.78,37.1,2664,186,41.2,Low,scale
+MRP-00112,Coastal Activewear 112,Activewear,Y2K Streetwear,Winter,159.99,100.01,37.5,2085,95,27.6,Medium,test online first
+MRP-00113,Denim Accessories 113,Accessories,Soft Tailoring Basics,Summer,299.99,201.6,32.8,234,551,32.8,Medium,scale
+MRP-00114,Everyday Footwear 114,Footwear,Relaxed Cargo Denim,Spring,399.99,197.53,50.6,1006,357,41.1,Low,promote
+MRP-00115,Everyday Basics 115,Basics,Local Culture Prints,Back to Campus,199.99,97.68,51.2,3964,302,51.7,High,reduce buy depth
+MRP-00116,Coastal Basics 116,Basics,Active Street,Holiday/Festive,299.99,196.26,34.6,3772,506,44.6,Low,hold
+MRP-00117,Coastal Accessories 117,Accessories,Coastal Summer Linen,Spring,159.99,80.25,49.8,3086,27,61.6,Low,scale
+MRP-00118,Essential Footwear 118,Footwear,Minimalist Basics,Graduation/Occasionwear,79.99,42.9,46.4,2632,54,62.0,Low,test online first
+MRP-00119,Street Bottoms 119,Bottoms,Oversized Knitwear,Heritage Month,79.99,36.88,53.9,1899,394,27.1,Medium,promote
+MRP-00120,Street Denim 120,Denim,Winter Layering Essentials,Graduation/Occasionwear,79.99,41.54,48.1,1185,145,49.0,Low,reduce buy depth
+MRP-00121,Street Occasionwear 121,Occasionwear,Affordable Quiet Luxury,Black Friday,199.99,95.24,52.4,893,209,75.6,High,hold
+MRP-00122,Everyday Footwear 122,Footwear,Minimalist Basics,Graduation/Occasionwear,299.99,155.37,48.2,2113,217,68.9,Medium,bundle
+MRP-00123,Street Dresses 123,Dresses,Coastal Summer Linen,Black Friday,79.99,48.35,39.6,690,97,75.7,Low,test online first
+MRP-00124,Luxe Bottoms 124,Bottoms,Weekend Travel Fits,Back to Campus,199.99,119.63,40.2,1161,480,21.7,Low,add creator styling content
+MRP-00125,Utility Tops 125,Tops,Summer Crochet Edit,Heritage Month,199.99,106.56,46.7,3105,123,25.0,Low,scale
+MRP-00126,Luxe Denim 126,Denim,Tech Utility Jackets,Back to Campus,129.99,68.32,47.4,3678,100,45.6,Medium,hold
+MRP-00127,Essential Bottoms 127,Bottoms,Soft Tailoring Basics,Heritage Month,299.99,201.39,32.9,2905,494,77.2,High,add creator styling content
+MRP-00128,Everyday Denim 128,Denim,Affordable Quiet Luxury,Winter,129.99,79.31,39.0,504,431,85.4,Medium,add creator styling content
+MRP-00129,Denim Occasionwear 129,Occasionwear,Tech Utility Jackets,Holiday/Festive,349.99,172.09,50.8,2584,34,81.8,High,hold
+MRP-00130,Denim Activewear 130,Activewear,Back to Campus Fits,Black Friday,349.99,166.59,52.4,268,69,37.4,Medium,scale
+MRP-00131,Campus Basics 131,Basics,Relaxed Cargo Denim,Holiday/Festive,499.99,308.23,38.4,2206,540,68.9,High,scale
+MRP-00132,Denim Accessories 132,Accessories,Tech Utility Jackets,Winter,159.99,89.73,43.9,3516,576,84.0,High,scale
+MRP-00133,Luxe Tops 133,Tops,Oversized Knitwear,Black Friday,129.99,73.61,43.4,3641,174,23.5,Medium,bundle
+MRP-00134,Campus Dresses 134,Dresses,Active Street,Graduation/Occasionwear,199.99,92.31,53.8,2715,392,47.8,Low,scale
+MRP-00135,Luxe Activewear 135,Activewear,Resort Neutrals,Black Friday,499.99,276.53,44.7,1374,126,90.6,High,test online first
+MRP-00136,Heritage Tops 136,Tops,Affordable Quiet Luxury,Graduation/Occasionwear,299.99,163.45,45.5,80,98,76.6,High,test online first
+MRP-00137,Luxe Outerwear 137,Outerwear,Weekend Travel Fits,Holiday/Festive,399.99,231.73,42.1,1568,60,78.4,Medium,bundle
+MRP-00138,Utility Basics 138,Basics,Relaxed Cargo Denim,Black Friday,499.99,293.99,41.2,547,104,74.2,Low,scale
+MRP-00139,Utility Footwear 139,Footwear,Denim Revival,Autumn,199.99,115.19,42.4,267,173,54.4,High,test online first
+MRP-00140,Campus Accessories 140,Accessories,Affordable Quiet Luxury,Autumn,199.99,118.09,41.0,3890,407,34.0,Low,test online first
+MRP-00141,Active Footwear 141,Footwear,Affordable Quiet Luxury,Autumn,299.99,138.2,53.9,3242,466,51.8,High,reduce buy depth
+MRP-00142,Everyday Denim 142,Denim,Monochrome Essentials,Graduation/Occasionwear,79.99,45.75,42.8,3911,448,80.1,Medium,reduce buy depth
+MRP-00143,Coastal Denim 143,Denim,Minimalist Basics,Autumn,499.99,244.96,51.0,1666,334,55.3,Medium,promote
+MRP-00144,Utility Occasionwear 144,Occasionwear,Back to Campus Fits,Back to Campus,159.99,82.06,48.7,1934,141,28.2,High,test online first
+MRP-00145,Heritage Basics 145,Basics,Heritage Style Drop,Spring,399.99,259.18,35.2,902,219,64.2,Medium,test online first
+MRP-00146,Coastal Footwear 146,Footwear,Back to Campus Fits,Graduation/Occasionwear,129.99,87.84,32.4,2302,335,70.6,Medium,reduce buy depth
+MRP-00147,Denim Activewear 147,Activewear,Local Culture Prints,Graduation/Occasionwear,499.99,333.4,33.3,1251,437,77.8,High,scale
+MRP-00148,Everyday Tops 148,Tops,Soft Tailoring Basics,Spring,129.99,60.08,53.8,1173,169,90.8,High,bundle
+MRP-00149,Essential Denim 149,Denim,Elevated Basics,Spring,79.99,48.7,39.1,3166,559,20.4,Medium,scale
+MRP-00150,Heritage Occasionwear 150,Occasionwear,Summer Crochet Edit,Heritage Month,399.99,259.56,35.1,1053,528,76.0,High,bundle
+MRP-00151,Utility Tops 151,Tops,Back to Campus Fits,Graduation/Occasionwear,299.99,161.74,46.1,300,18,73.0,Low,reduce buy depth
+MRP-00152,Utility Activewear 152,Activewear,Elevated Basics,Graduation/Occasionwear,159.99,105.54,34.0,3104,206,75.4,Low,bundle
+MRP-00153,Coastal Activewear 153,Activewear,Festival Street Style,Graduation/Occasionwear,99.99,49.3,50.7,568,391,21.0,Medium,reduce buy depth
+MRP-00154,Essential Outerwear 154,Outerwear,Campus Sneaker Culture,Summer,129.99,75.96,41.6,1433,482,70.5,Low,scale
+MRP-00155,Active Denim 155,Denim,Back to Campus Fits,Back to Campus,249.99,146.81,41.3,2089,591,58.7,Low,add creator styling content
+MRP-00156,Heritage Footwear 156,Footwear,Retro Sport Luxe,Autumn,159.99,107.21,33.0,3300,522,29.8,High,reduce buy depth
+MRP-00157,Campus Accessories 157,Accessories,Sustainable Denim Capsule,Holiday/Festive,249.99,125.21,49.9,1436,374,39.7,High,reduce buy depth
+MRP-00158,Utility Activewear 158,Activewear,Workwear Remix,Black Friday,79.99,38.11,52.4,1064,254,89.0,High,bundle
+MRP-00159,Heritage Accessories 159,Accessories,Back to Campus Fits,Back to Campus,99.99,53.87,46.1,181,534,78.8,Medium,reduce buy depth
+MRP-00160,Campus Basics 160,Basics,Resort Neutrals,Holiday/Festive,349.99,161.03,54.0,2184,89,88.2,Low,add creator styling content
+MRP-00161,Campus Basics 161,Basics,Workwear Remix,Spring,79.99,47.53,40.6,3622,439,79.8,Low,reduce buy depth
+MRP-00162,Coastal Accessories 162,Accessories,Oversized Knitwear,Summer,99.99,62.17,37.8,1960,344,20.8,Low,scale
+MRP-00163,Active Denim 163,Denim,Street Smart Athleisure,Spring,199.99,115.67,42.2,3811,269,48.2,Medium,test online first
+MRP-00164,Street Accessories 164,Accessories,Bold Graphic Tees,Graduation/Occasionwear,249.99,113.47,54.6,104,69,73.9,High,scale
+MRP-00165,Essential Bottoms 165,Bottoms,Denim Revival,Autumn,399.99,189.76,52.6,1233,453,46.2,High,scale
+MRP-00166,Denim Activewear 166,Activewear,Festival Street Style,Graduation/Occasionwear,399.99,200.22,49.9,1288,152,40.1,High,test online first
+MRP-00167,Coastal Footwear 167,Footwear,Coastal Summer Linen,Autumn,399.99,260.47,34.9,251,10,60.4,Medium,reduce buy depth
+MRP-00168,Utility Basics 168,Basics,Sustainable Denim Capsule,Spring,199.99,99.66,50.2,1770,529,28.5,Low,hold
+MRP-00169,Coastal Occasionwear 169,Occasionwear,Elevated Basics,Summer,199.99,98.93,50.5,3567,567,52.1,High,scale
+MRP-00170,Campus Outerwear 170,Outerwear,Tech Utility Jackets,Black Friday,99.99,50.76,49.2,3977,343,44.4,High,test online first
+MRP-00171,Campus Dresses 171,Dresses,Affordable Quiet Luxury,Holiday/Festive,199.99,118.49,40.8,2070,466,42.3,High,bundle
+MRP-00172,Utility Occasionwear 172,Occasionwear,Campus Sneaker Culture,Heritage Month,499.99,290.18,42.0,770,9,41.2,Low,test online first
+MRP-00173,Utility Accessories 173,Accessories,Y2K Streetwear,Black Friday,249.99,120.22,51.9,1975,461,44.5,Medium,promote
+MRP-00174,Street Basics 174,Basics,Affordable Quiet Luxury,Back to Campus,129.99,77.8,40.1,3597,148,84.0,Low,bundle
+MRP-00175,Heritage Bottoms 175,Bottoms,Colour Pop Accessories,Summer,99.99,65.51,34.5,3408,600,60.8,High,hold
+MRP-00176,Heritage Tops 176,Tops,Workwear Remix,Black Friday,199.99,114.99,42.5,2758,157,45.1,Low,add creator styling content
+MRP-00177,Heritage Occasionwear 177,Occasionwear,Colour Pop Accessories,Graduation/Occasionwear,199.99,96.15,51.9,450,411,44.9,Low,test online first
+MRP-00178,Heritage Dresses 178,Dresses,Summer Crochet Edit,Winter,499.99,303.67,39.3,1907,168,31.3,High,test online first
+MRP-00179,Everyday Denim 179,Denim,Colour Pop Accessories,Spring,349.99,233.1,33.4,3198,504,35.1,Medium,bundle
+MRP-00180,Utility Dresses 180,Dresses,Utility Cargo Streetwear,Heritage Month,159.99,91.05,43.1,2003,470,83.2,Low,test online first
+MRP-00181,Essential Footwear 181,Footwear,Affordable Quiet Luxury,Back to Campus,399.99,238.28,40.4,2450,562,60.2,Medium,test online first
+MRP-00182,Street Accessories 182,Accessories,Denim Revival,Graduation/Occasionwear,499.99,300.13,40.0,1110,390,90.0,Low,reduce buy depth
+MRP-00183,Luxe Accessories 183,Accessories,Denim Revival,Summer,249.99,140.49,43.8,2135,147,50.6,Low,scale
+MRP-00184,Coastal Basics 184,Basics,Oversized Knitwear,Winter,199.99,99.72,50.1,1563,126,66.9,Medium,add creator styling content
+MRP-00185,Luxe Footwear 185,Footwear,Colour Pop Accessories,Black Friday,99.99,56.07,43.9,943,170,65.9,Medium,scale
+MRP-00186,Coastal Dresses 186,Dresses,Utility Cargo Streetwear,Winter,129.99,75.64,41.8,2658,529,20.9,High,hold
+MRP-00187,Heritage Tops 187,Tops,Festival Street Style,Heritage Month,199.99,132.43,33.8,2534,582,65.2,High,test online first
+MRP-00188,Luxe Outerwear 188,Outerwear,Sustainable Denim Capsule,Black Friday,159.99,88.53,44.7,778,229,79.4,High,hold
+MRP-00189,Heritage Occasionwear 189,Occasionwear,Elevated Basics,Back to Campus,129.99,77.13,40.7,766,355,86.3,High,reduce buy depth
+MRP-00190,Street Bottoms 190,Bottoms,Earth Tone Basics,Summer,299.99,161.59,46.1,908,540,81.6,High,test online first
+MRP-00191,Coastal Accessories 191,Accessories,Elevated Basics,Black Friday,129.99,76.6,41.1,3772,44,83.0,High,reduce buy depth
+MRP-00192,Active Bottoms 192,Bottoms,Sustainable Denim Capsule,Graduation/Occasionwear,349.99,210.58,39.8,3469,6,84.4,High,test online first
+MRP-00193,Everyday Accessories 193,Accessories,Retro Sport Luxe,Graduation/Occasionwear,299.99,160.55,46.5,1837,239,87.4,Medium,add creator styling content
+MRP-00194,Active Accessories 194,Accessories,Denim Revival,Autumn,499.99,317.53,36.5,1822,142,36.8,Low,add creator styling content
+MRP-00195,Denim Bottoms 195,Bottoms,Heritage Style Drop,Back to Campus,499.99,325.82,34.8,854,10,70.5,Low,reduce buy depth
+MRP-00196,Campus Basics 196,Basics,Affordable Quiet Luxury,Holiday/Festive,399.99,180.66,54.8,1754,375,25.9,Medium,test online first
+MRP-00197,Denim Occasionwear 197,Occasionwear,Y2K Streetwear,Holiday/Festive,199.99,129.32,35.3,2586,287,91.4,Medium,add creator styling content
+MRP-00198,Luxe Dresses 198,Dresses,Bold Graphic Tees,Winter,399.99,252.1,37.0,1596,577,59.1,Medium,bundle
+MRP-00199,Street Occasionwear 199,Occasionwear,Denim Revival,Spring,299.99,185.76,38.1,1909,170,25.4,High,promote
+MRP-00200,Everyday Footwear 200,Footwear,Street Smart Athleisure,Winter,399.99,236.48,40.9,1673,10,77.5,Low,promote
+MRP-00201,Campus Occasionwear 201,Occasionwear,Bold Graphic Tees,Holiday/Festive,99.99,46.47,53.5,407,43,71.6,Medium,reduce buy depth
+MRP-00202,Coastal Basics 202,Basics,Heritage Style Drop,Black Friday,499.99,231.6,53.7,1878,15,32.9,High,add creator styling content
+MRP-00203,Active Basics 203,Basics,Heritage Style Drop,Graduation/Occasionwear,159.99,73.23,54.2,2192,242,63.5,High,scale
+MRP-00204,Street Footwear 204,Footwear,Earth Tone Basics,Back to Campus,79.99,53.95,32.6,3273,414,44.1,Medium,promote
+MRP-00205,Street Occasionwear 205,Occasionwear,Winter Layering Essentials,Autumn,399.99,181.41,54.6,2331,296,71.7,High,reduce buy depth
+MRP-00206,Campus Footwear 206,Footwear,Denim Revival,Black Friday,199.99,100.4,49.8,3888,418,60.5,Medium,hold
+MRP-00207,Heritage Accessories 207,Accessories,Retro Sport Luxe,Back to Campus,99.99,57.84,42.2,1472,124,77.4,Medium,reduce buy depth
+MRP-00208,Active Occasionwear 208,Occasionwear,Y2K Streetwear,Black Friday,349.99,235.26,32.8,3233,254,74.1,Medium,test online first
+MRP-00209,Luxe Activewear 209,Activewear,Weekend Travel Fits,Autumn,499.99,324.13,35.2,1136,74,46.3,Low,test online first
+MRP-00210,Utility Dresses 210,Dresses,Street Smart Athleisure,Graduation/Occasionwear,249.99,136.21,45.5,2274,14,69.9,Medium,hold

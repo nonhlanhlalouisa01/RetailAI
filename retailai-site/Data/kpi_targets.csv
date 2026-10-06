@@ -1,0 +1,121 @@
+kpi_id,campaign_id,campaign_name,primary_kpi,target_roi_pct,target_revenue_zar_m,target_conversion_rate_pct,target_sell_through_pct,target_sentiment_score,owner_team
+KPI-0001,CAMP-0001,Denim Revival 001,engagement rate,123,7.43,6.2,80.8,74,Finance
+KPI-0002,CAMP-0002,Active Street Drop 002,new customer acquisition,213,7.02,2.6,75.3,79,Merchandising
+KPI-0003,CAMP-0003,Coastal Summer Linen 003,new customer acquisition,221,13.23,4.3,74.5,72,Finance
+KPI-0004,CAMP-0004,Denim Revival 004,new customer acquisition,230,5.56,6.4,83.9,76,CRM
+KPI-0005,CAMP-0005,Denim Revival 005,conversion rate,200,13.68,6.2,66.6,66,Marketing
+KPI-0006,CAMP-0006,Denim Revival 006,engagement rate,189,11.91,3.2,46.9,80,Merchandising
+KPI-0007,CAMP-0007,Festival Fits 007,engagement rate,130,1.91,4.1,48.7,70,Digital
+KPI-0008,CAMP-0008,Street Utility Edit 008,revenue uplift,138,14.91,3.7,48.4,84,CRM
+KPI-0009,CAMP-0009,Heritage Style Drop 009,ROI,126,3.34,2.4,70.9,67,Digital
+KPI-0010,CAMP-0010,Denim Revival 010,engagement rate,215,4.39,4.3,65.0,83,Merchandising
+KPI-0011,CAMP-0011,Street Utility Edit 011,sell-through,128,10.35,5.6,69.0,78,Finance
+KPI-0012,CAMP-0012,Denim Revival 012,revenue uplift,209,14.37,6.1,51.0,88,CRM
+KPI-0013,CAMP-0013,Street Utility Edit 013,new customer acquisition,156,5.56,4.6,85.0,80,Marketing
+KPI-0014,CAMP-0014,Heritage Style Drop 014,sell-through,183,1.91,3.2,68.6,72,Marketing
+KPI-0015,CAMP-0015,Festival Fits 015,ROI,123,2.15,3.2,76.6,90,Finance
+KPI-0016,CAMP-0016,Coastal Summer Linen 016,conversion rate,191,10.51,3.9,59.2,66,CRM
+KPI-0017,CAMP-0017,Back to Campus Fits 017,sell-through,161,4.49,6.0,70.7,70,CRM
+KPI-0018,CAMP-0018,Heritage Style Drop 018,conversion rate,226,12.57,3.3,80.8,87,Finance
+KPI-0019,CAMP-0019,Festival Fits 019,sell-through,234,12.69,4.5,58.3,77,Merchandising
+KPI-0020,CAMP-0020,Campus Sneaker Culture 020,sell-through,122,3.21,2.5,82.2,83,CRM
+KPI-0021,CAMP-0021,Heritage Style Drop 021,engagement rate,200,9.04,2.8,70.6,84,CRM
+KPI-0022,CAMP-0022,Denim Revival 022,new customer acquisition,229,2.35,5.2,56.3,84,CRM
+KPI-0023,CAMP-0023,Street Utility Edit 023,conversion rate,147,14.77,3.7,54.9,73,Finance
+KPI-0024,CAMP-0024,Denim Revival 024,ROI,222,8.12,3.9,55.6,81,Merchandising
+KPI-0025,CAMP-0025,Denim Revival 025,ROI,225,8.33,2.7,62.8,69,Finance
+KPI-0026,CAMP-0026,Denim Revival 026,ROI,159,11.64,3.5,60.4,70,Merchandising
+KPI-0027,CAMP-0027,Active Street Drop 027,new customer acquisition,215,11.9,4.6,54.7,85,CRM
+KPI-0028,CAMP-0028,Active Street Drop 028,conversion rate,155,11.81,3.2,66.9,65,Finance
+KPI-0029,CAMP-0029,Festival Fits 029,ROI,199,6.8,6.4,83.4,89,Digital
+KPI-0030,CAMP-0030,Coastal Summer Linen 030,new customer acquisition,222,13.24,3.2,61.0,87,Finance
+KPI-0031,CAMP-0031,Back to Campus Fits 031,ROI,136,6.6,3.0,46.6,78,Digital
+KPI-0032,CAMP-0032,Street Utility Edit 032,new customer acquisition,196,14.37,6.4,60.8,69,Finance
+KPI-0033,CAMP-0033,Festival Fits 033,engagement rate,192,13.28,4.0,68.0,78,Marketing
+KPI-0034,CAMP-0034,Festival Fits 034,revenue uplift,138,13.23,4.8,47.5,74,Marketing
+KPI-0035,CAMP-0035,Heritage Style Drop 035,ROI,128,6.34,3.0,78.2,83,Digital
+KPI-0036,CAMP-0036,Heritage Style Drop 036,ROI,171,7.43,3.6,75.2,84,Digital
+KPI-0037,CAMP-0037,Quiet Luxury Basics 037,engagement rate,150,6.02,6.5,79.9,87,CRM
+KPI-0038,CAMP-0038,Quiet Luxury Basics 038,engagement rate,220,11.3,2.5,53.5,88,CRM
+KPI-0039,CAMP-0039,Heritage Style Drop 039,sell-through,196,13.18,6.0,58.7,72,Marketing
+KPI-0040,CAMP-0040,Quiet Luxury Basics 040,ROI,207,6.02,6.1,57.8,81,Marketing
+KPI-0041,CAMP-0041,Campus Sneaker Culture 041,revenue uplift,233,9.81,3.8,76.2,87,Marketing
+KPI-0042,CAMP-0042,Street Utility Edit 042,engagement rate,198,1.91,6.1,59.4,73,Merchandising
+KPI-0043,CAMP-0043,Back to Campus Fits 043,new customer acquisition,237,8.42,4.2,55.5,84,Marketing
+KPI-0044,CAMP-0044,Active Street Drop 044,conversion rate,235,4.38,3.9,71.0,71,Merchandising
+KPI-0045,CAMP-0045,Street Utility Edit 045,engagement rate,209,13.69,3.2,76.5,78,CRM
+KPI-0046,CAMP-0046,Heritage Style Drop 046,new customer acquisition,142,6.69,5.8,63.8,88,CRM
+KPI-0047,CAMP-0047,Back to Campus Fits 047,revenue uplift,121,8.91,6.0,82.3,67,Finance
+KPI-0048,CAMP-0048,Street Utility Edit 048,revenue uplift,202,9.94,2.6,55.3,82,Finance
+KPI-0049,CAMP-0049,Active Street Drop 049,engagement rate,169,7.02,5.4,70.2,82,Finance
+KPI-0050,CAMP-0050,Denim Revival 050,conversion rate,172,8.07,6.3,74.2,77,CRM
+KPI-0051,CAMP-0051,Heritage Style Drop 051,engagement rate,208,9.04,5.7,50.8,73,Marketing
+KPI-0052,CAMP-0052,Quiet Luxury Basics 052,ROI,151,15.51,4.0,61.5,68,Digital
+KPI-0053,CAMP-0053,Coastal Summer Linen 053,sell-through,219,13.28,5.8,69.9,77,CRM
+KPI-0054,CAMP-0054,Festival Fits 054,conversion rate,141,14.37,6.3,66.8,84,Finance
+KPI-0055,CAMP-0055,Active Street Drop 055,revenue uplift,193,2.42,4.8,81.6,87,Finance
+KPI-0056,CAMP-0056,Sustainable Denim Capsule 056,sell-through,129,12.39,3.8,69.7,79,Merchandising
+KPI-0057,CAMP-0057,Denim Revival 057,revenue uplift,236,2.62,6.2,60.2,74,Marketing
+KPI-0058,CAMP-0058,Denim Revival 058,revenue uplift,222,12.5,3.5,68.5,75,Marketing
+KPI-0059,CAMP-0059,Heritage Style Drop 059,revenue uplift,204,14.9,2.5,69.5,88,Finance
+KPI-0060,CAMP-0060,Denim Revival 060,revenue uplift,179,4.85,5.1,47.3,86,CRM
+KPI-0061,CAMP-0061,Sustainable Denim Capsule 061,revenue uplift,187,13.82,6.5,54.9,77,Marketing
+KPI-0062,CAMP-0062,Sustainable Denim Capsule 062,ROI,237,9.61,3.6,47.8,67,CRM
+KPI-0063,CAMP-0063,Heritage Style Drop 063,conversion rate,222,16.77,5.1,47.5,84,Finance
+KPI-0064,CAMP-0064,Active Street Drop 064,conversion rate,206,15.49,5.4,67.2,77,Digital
+KPI-0065,CAMP-0065,Quiet Luxury Basics 065,sell-through,133,16.61,3.9,54.9,87,Digital
+KPI-0066,CAMP-0066,Back to Campus Fits 066,ROI,127,7.74,2.5,68.2,75,Merchandising
+KPI-0067,CAMP-0067,Back to Campus Fits 067,new customer acquisition,217,12.39,4.7,60.2,65,Marketing
+KPI-0068,CAMP-0068,Denim Revival 068,new customer acquisition,178,9.83,2.1,71.2,83,Merchandising
+KPI-0069,CAMP-0069,Campus Sneaker Culture 069,ROI,168,2.26,5.6,56.9,83,Merchandising
+KPI-0070,CAMP-0070,Street Utility Edit 070,sell-through,170,13.75,2.8,56.7,77,CRM
+KPI-0071,CAMP-0071,Festival Fits 071,new customer acquisition,153,9.94,5.1,56.0,88,Finance
+KPI-0072,CAMP-0072,Coastal Summer Linen 072,new customer acquisition,201,14.9,4.8,62.3,78,Marketing
+KPI-0073,CAMP-0073,Campus Sneaker Culture 073,new customer acquisition,240,14.81,3.5,62.4,70,Marketing
+KPI-0074,CAMP-0074,Campus Sneaker Culture 074,new customer acquisition,224,6.03,5.7,82.3,75,CRM
+KPI-0075,CAMP-0075,Active Street Drop 075,new customer acquisition,202,6.02,5.9,64.6,79,Merchandising
+KPI-0076,CAMP-0076,Quiet Luxury Basics 076,sell-through,125,3.26,4.4,46.2,79,Merchandising
+KPI-0077,CAMP-0077,Back to Campus Fits 077,new customer acquisition,176,15.36,5.5,83.6,71,Finance
+KPI-0078,CAMP-0078,Street Utility Edit 078,sell-through,202,8.91,5.6,46.2,69,Digital
+KPI-0079,CAMP-0079,Quiet Luxury Basics 079,new customer acquisition,125,14.23,5.9,59.8,90,CRM
+KPI-0080,CAMP-0080,Back to Campus Fits 080,new customer acquisition,194,11.91,5.9,76.3,85,Digital
+KPI-0081,CAMP-0081,Street Utility Edit 081,ROI,151,2.48,5.5,58.5,74,Marketing
+KPI-0082,CAMP-0082,Denim Revival 082,ROI,224,9.61,2.5,70.3,84,Finance
+KPI-0083,CAMP-0083,Festival Fits 083,new customer acquisition,206,12.57,3.6,82.0,65,CRM
+KPI-0084,CAMP-0084,Coastal Summer Linen 084,sell-through,142,6.02,2.7,52.5,70,Digital
+KPI-0085,CAMP-0085,Coastal Summer Linen 085,engagement rate,151,4.6,3.3,83.5,90,CRM
+KPI-0086,CAMP-0086,Denim Revival 086,ROI,120,5.07,3.9,80.3,87,CRM
+KPI-0087,CAMP-0087,Coastal Summer Linen 087,revenue uplift,138,10.89,3.4,50.4,75,Finance
+KPI-0088,CAMP-0088,Festival Fits 088,sell-through,131,16.63,2.3,46.1,67,Digital
+KPI-0089,CAMP-0089,Campus Sneaker Culture 089,sell-through,166,7.74,3.3,84.3,67,Merchandising
+KPI-0090,CAMP-0090,Back to Campus Fits 090,ROI,221,6.7,6.1,79.1,73,Finance
+KPI-0091,CAMP-0091,Festival Fits 091,conversion rate,146,11.9,5.6,70.6,66,Marketing
+KPI-0092,CAMP-0092,Heritage Style Drop 092,revenue uplift,220,2.62,5.4,84.2,65,Marketing
+KPI-0093,CAMP-0093,Quiet Luxury Basics 093,revenue uplift,215,13.1,4.1,65.7,77,CRM
+KPI-0094,CAMP-0094,Coastal Summer Linen 094,revenue uplift,129,3.57,5.2,84.7,69,Digital
+KPI-0095,CAMP-0095,Festival Fits 095,engagement rate,167,11.21,5.9,51.9,84,Merchandising
+KPI-0096,CAMP-0096,Back to Campus Fits 096,new customer acquisition,192,11.78,4.0,76.4,65,Merchandising
+KPI-0097,CAMP-0097,Denim Revival 097,conversion rate,197,14.68,4.0,84.8,78,Merchandising
+KPI-0098,CAMP-0098,Active Street Drop 098,engagement rate,230,15.69,5.8,70.5,78,Marketing
+KPI-0099,CAMP-0099,Festival Fits 099,conversion rate,175,9.23,2.7,49.4,70,Marketing
+KPI-0100,CAMP-0100,Active Street Drop 100,new customer acquisition,218,3.17,2.9,55.0,88,CRM
+KPI-0101,CAMP-0101,Campus Sneaker Culture 101,ROI,191,14.9,3.5,62.2,87,Finance
+KPI-0102,CAMP-0102,Campus Sneaker Culture 102,engagement rate,205,2.42,5.3,79.7,82,Marketing
+KPI-0103,CAMP-0103,Festival Fits 103,new customer acquisition,171,13.68,4.1,59.0,85,Digital
+KPI-0104,CAMP-0104,Heritage Style Drop 104,sell-through,124,15.69,3.7,55.6,81,Digital
+KPI-0105,CAMP-0105,Sustainable Denim Capsule 105,conversion rate,214,2.57,3.4,49.9,82,Digital
+KPI-0106,CAMP-0106,Heritage Style Drop 106,conversion rate,142,13.24,4.3,80.1,76,Merchandising
+KPI-0107,CAMP-0107,Coastal Summer Linen 107,ROI,203,9.64,2.2,72.0,78,Merchandising
+KPI-0108,CAMP-0108,Active Street Drop 108,sell-through,207,16.3,3.4,59.7,85,CRM
+KPI-0109,CAMP-0109,Street Utility Edit 109,ROI,180,12.2,3.5,50.8,71,Marketing
+KPI-0110,CAMP-0110,Quiet Luxury Basics 110,ROI,130,11.64,2.5,82.8,69,CRM
+KPI-0111,CAMP-0111,Sustainable Denim Capsule 111,revenue uplift,231,10.89,3.3,66.5,89,CRM
+KPI-0112,CAMP-0112,Street Utility Edit 112,engagement rate,176,16.63,5.1,69.8,67,CRM
+KPI-0113,CAMP-0113,Back to Campus Fits 113,conversion rate,203,16.26,4.0,75.9,89,Digital
+KPI-0114,CAMP-0114,Active Street Drop 114,sell-through,136,13.1,3.1,56.7,85,Digital
+KPI-0115,CAMP-0115,Sustainable Denim Capsule 115,conversion rate,178,5.26,4.2,46.2,82,Finance
+KPI-0116,CAMP-0116,Denim Revival 116,revenue uplift,134,10.66,3.7,51.8,67,CRM
+KPI-0117,CAMP-0117,Active Street Drop 117,new customer acquisition,124,6.8,3.6,45.5,82,Marketing
+KPI-0118,CAMP-0118,Denim Revival 118,ROI,171,15.96,5.6,47.7,90,CRM
+KPI-0119,CAMP-0119,Denim Revival 119,new customer acquisition,210,2.26,6.3,78.1,73,Merchandising
+KPI-0120,CAMP-0120,Sustainable Denim Capsule 120,new customer acquisition,134,13.82,5.2,52.8,77,Finance

@@ -1,0 +1,13 @@
+.git
+.gitignore
+.azure
+.env
+.env.*
+!.env.example
+**/node_modules
+**/.env
+**/.env.*
+!**/.env.example
+**/*.test.js
+New folder/
+npm-debug.log*

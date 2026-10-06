@@ -1,0 +1,2492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RetailAI | AI-Powered Creative & Marketing Intelligence for Mr Price</title>
+<meta name="description" content="RetailAI is a multi-agent AI platform for Mr Price Group that unifies campaign strategy, customer sentiment, retail analytics, and creative talent discovery." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Work+Sans:wght@600;700&amp;family=Archivo+Black&amp;display=swap" rel="stylesheet" />
+
+<!-- Chart.js (used by Analytics Dashboard preview) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+<style>
+/* ============================================================
+  RetailAI | Mr Price Group
+   Brand tokens
+   ============================================================ */
+:root {
+  --mp-red: #E6202A;
+  --mp-red-hover: #c91620;
+  --mp-red-soft: rgba(230, 32, 42, 0.08);
+  --mp-white: #FFFFFF;
+  --mp-dark: #1F1F1F;
+  --mp-dark-2: #141414;
+  --mp-gray: #F5F5F5;
+  --mp-gray-2: #ECECEC;
+  --mp-border: #E4E4E4;
+  --mp-text: #1F1F1F;
+  --mp-text-muted: #5C5C5C;
+  --mp-text-soft: #7A7A7A;
+
+  --grad-hero: linear-gradient(90deg, #ffffff 0%, #ffffff 53%, #f5f5f5 53%, #f5f5f5 100%);
+
+  --glass-bg: rgba(255,255,255,0.55);
+  --glass-border: rgba(255,255,255,0.65);
+  --glass-shadow: 0 20px 60px rgba(0,0,0,0.08);
+
+  --radius: 4px;
+  --radius-lg: 6px;
+  --shadow-soft: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 12px 30px rgba(0,0,0,0.10);
+}
+
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Inter", sans-serif, Helvetica, Arial;
+  background: var(--mp-white);
+  color: var(--mp-text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display:block; max-width:100%; }
+a { color: var(--mp-red); text-decoration:none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ============================================================
+   Nav
+   ============================================================ */
+.nav {
+  position: sticky; top: 0; z-index: 30;
+  background: var(--mp-white);
+  border-bottom: 1px solid var(--mp-border);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 80px; padding: 1rem 0;
+}
+.brand-row { display:flex; align-items:center; gap: 1rem; }
+.mp-logo {
+  display:inline-flex; align-items:center; flex: 0 0 auto;
+}
+.mp-logo img { width: 131px; height: 25px; object-fit: contain; }
+.brand-sep { width:1px; height:30px; background: #c9c9c9; }
+.retailai-mark {
+  display:flex; align-items:center; gap:.55rem;
+  font-family: "Work Sans", "Inter", sans-serif; font-weight:700;
+  letter-spacing: 0; color: var(--mp-dark); font-size:1.1rem;
+}
+.retailai-mark .ai-accent { color: var(--mp-red); }
+
+.nav-links { display:flex; gap:1.35rem; align-items:center; }
+.nav-links a { color: var(--mp-dark); font-size:.82rem; font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+.nav-links .btn-primary { color:#fff; white-space:nowrap; }
+.nav-links a:hover { color: var(--mp-dark); text-decoration:none; }
+.nav-links .btn-primary:hover { color:#fff; }
+.nav-links a.active { color: var(--mp-red); box-shadow: inset 0 -3px 0 var(--mp-red); }
+.nav-links .btn-primary.active { box-shadow:none; }
+
+/* Section panes: only the selected one is in the document flow. */
+section[data-pane] { display: none; }
+section[data-pane].pane-on { display: block; }
+
+.btn {
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding: .78rem 1.15rem; border-radius: 2px; font-weight: 700; font-size: .82rem;
+  text-transform: uppercase; letter-spacing: .04em;
+  cursor: pointer; border:1px solid transparent;
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+}
+.btn-primary { background: var(--mp-dark); color:#fff; box-shadow: none; }
+.btn-primary:hover { background: var(--mp-red); text-decoration:none; transform: none; }
+.btn-ghost { background:#fff; color: var(--mp-dark); border-color: var(--mp-border); }
+.btn-ghost:hover { background: var(--mp-gray); text-decoration:none; }
+.btn-dark { background: var(--mp-dark); color:#fff; }
+.btn-dark:hover { background:#000; text-decoration:none; }
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  position: relative; overflow: hidden;
+  background: var(--grad-hero);
+  padding: 5.5rem 0 5rem; border-bottom: 1px solid var(--mp-border);
+}
+.hero::before, .hero::after {
+  display:none;
+}
+@keyframes float {
+  0%,100% { transform: translate(0,0); }
+  50% { transform: translate(24px, -22px); }
+}
+.hero-grid {
+  position: relative; z-index:1;
+  display:grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items:center;
+}
+.eyebrow {
+  display:inline-flex; align-items:center; gap:.45rem;
+  font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  color: var(--mp-dark); background: transparent;
+  padding:.15rem 0 .15rem .75rem; border-left:4px solid var(--mp-red);
+}
+.hero h1 {
+  font-family: "Work Sans", "Inter", sans-serif;
+  font-size: clamp(2.35rem, 4.6vw, 4rem);
+  line-height: 1.02; letter-spacing:0; margin:1rem 0 1rem;
+  color: var(--mp-dark);
+}
+.hero h1 .accent { color: var(--mp-red); }
+.hero .lede {
+  font-size: 1.1rem; color: var(--mp-text-muted); max-width: 36rem; margin-bottom: 1.75rem;
+}
+.hero-ctas { display:flex; gap:.75rem; flex-wrap:wrap; }
+.trust { margin-top: 1.4rem; color: var(--mp-text-soft); font-size:.85rem; }
+
+/* Floating theme chips */
+.hero-visual {
+  position: relative; min-height: 380px;
+}
+.chip-cloud {
+  position: relative; width: 100%; height: 100%; min-height: 380px;
+}
+.chip {
+  position:absolute; padding:.55rem .85rem; border-radius:2px;
+  background: var(--mp-white);
+  border: 1px solid var(--mp-dark);
+  box-shadow: none; font-weight:700; font-size:.78rem;
+  color: var(--mp-dark); text-transform:uppercase; letter-spacing:.04em;
+  animation:none;
+}
+.chip.red { background: var(--mp-red); color:#fff; border-color: var(--mp-red); }
+.chip.dark { background: var(--mp-dark); color:#fff; border-color: rgba(255,255,255,.1); }
+@keyframes bob {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.c1 { top: 6%;  left: 8%;  animation-delay: 0s; }
+.c2 { top: 18%; right: 6%; animation-delay: .6s; }
+.c3 { top: 42%; left: 22%; animation-delay: 1.2s; }
+.c4 { top: 40%; right: 14%; animation-delay: .3s; }
+.c5 { bottom: 12%; left: 6%; animation-delay: .9s; }
+.c6 { bottom: 6%;  right: 22%; animation-delay: 1.5s; }
+
+.hero-card {
+  position:absolute; inset: 22% 20% 22% 20%;
+  border-radius: 2px;
+  background: var(--mp-white);
+  border:2px solid var(--mp-dark);
+  box-shadow: 12px 12px 0 var(--mp-red);
+  padding: 1rem 1.2rem;
+  display:flex; flex-direction:column; justify-content:center; gap:.4rem;
+}
+.hero-card .label { font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; color: var(--mp-text-muted); font-weight:700; }
+.hero-card .val { font-size: 1.6rem; font-weight: 800; color: var(--mp-dark); letter-spacing:-.02em; }
+.hero-card .delta { color: #0f8a4a; font-size:.85rem; font-weight:600; }
+
+/* ============================================================
+   Section base + reveal
+   ============================================================ */
+section { padding: 5rem 0; }
+.section-eyebrow {
+  font-size:.78rem; letter-spacing:.09em; text-transform:uppercase;
+  color: var(--mp-red); font-weight:800; margin-bottom:.5rem;
+}
+h2 {
+  font-family: "Work Sans", "Inter", sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem); letter-spacing:0; margin:0 0 .6rem; color: var(--mp-dark);
+}
+.section-lede { color: var(--mp-text-muted); max-width: 46rem; margin: 0 0 2rem; font-size:1.02rem; }
+
+.reveal, .reveal.in { opacity:1; transform:none; }
+
+.alt { background: var(--mp-gray); border-top:1px solid var(--mp-border); border-bottom:1px solid var(--mp-border); }
+
+/* ============================================================
+   About
+   ============================================================ */
+.about-grid { display:grid; grid-template-columns: 1.15fr .85fr; gap: 2.4rem; align-items:start; }
+.about-list { display:grid; grid-template-columns: 1fr 1fr; gap:.6rem 1rem; margin-top: 1rem; }
+.about-list li {
+  list-style:none; padding:.55rem .8rem; border:1px solid var(--mp-border); border-radius:10px;
+  background:#fff; font-size:.92rem; color: var(--mp-dark); display:flex; align-items:center; gap:.5rem;
+}
+.about-list li::before { content:""; width:8px; height:8px; border-radius:50%; background: var(--mp-red); }
+
+.about-collab { margin: 1.4rem 0 0; }
+.about-collab img {
+  display:block; width:100%; height:auto; border-radius: var(--radius-lg);
+  border:1px solid var(--mp-border); box-shadow: var(--shadow-soft);
+}
+.about-collab .collab-slang {
+  margin-top:.9rem; font-family:"Archivo Black", "Work Sans", sans-serif;
+  font-size: clamp(1.9rem, 4.2vw, 3rem); line-height:1.05; letter-spacing:-.02em;
+  text-transform:uppercase; display:flex; flex-wrap:wrap; gap:0 .45em;
+}
+.collab-slang span {
+  background: linear-gradient(100deg, var(--mp-dark) 0%, var(--mp-dark) 30%, var(--mp-red) 44%, #0f8a4a 58%, var(--mp-dark) 72%, var(--mp-dark) 100%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: slangShine 3.2s linear infinite, slangRise .7s cubic-bezier(.2,.8,.2,1) both;
+}
+.collab-slang span:nth-child(2) { animation-delay: 0s, .1s; }
+.collab-slang span:nth-child(3) { animation-delay: 0s, .2s; }
+.collab-slang span:nth-child(4) { animation-delay: 0s, .3s; }
+@keyframes slangShine { to { background-position: -300% 0; } }
+@keyframes slangRise { from { opacity:0; transform: translateY(.35em) skewX(-6deg); } to { opacity:1; transform:none; } }
+@media (prefers-reduced-motion: reduce) {
+  .collab-slang span { animation: none; color: var(--mp-dark); background: none; }
+}
+
+.stat-card {
+  background:#fff; border:4px solid #14532D; border-radius: var(--radius-lg);
+  padding: 1.5rem; box-shadow: var(--shadow-soft);
+}
+.stat-row { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; }
+.stat {
+  padding:1rem; border-radius: 12px; background: var(--mp-gray);
+}
+.stat .n { font-size: clamp(2.4rem, 4.2vw, 3.2rem); font-weight: 800; color: var(--mp-dark); letter-spacing:-.03em; line-height:1.05; }
+.stat .l { font-size:.86rem; color: var(--mp-text-muted); margin-top:.3rem; }
+
+/* ============================================================
+   Architecture
+   ============================================================ */
+.arch-wrap {
+  display:grid; grid-template-columns: 1.15fr .85fr; gap: 2rem; align-items:stretch;
+}
+.arch-canvas {
+  position: relative;
+  background: #fff; border:1px solid var(--mp-border); border-radius: var(--radius-lg);
+  padding: 1rem; box-shadow: var(--shadow-soft);
+  min-height: 480px;
+}
+.arch-canvas svg { width:100%; height:100%; min-height: 480px; }
+.node {
+  cursor: pointer;
+  transition: transform .18s ease;
+}
+.node:hover { transform: translateY(-2px); }
+.node rect { transition: fill .18s ease, stroke .18s ease; }
+.node.selected rect { stroke: var(--mp-red); stroke-width: 2.5; fill: #fff5f6; }
+.node text { pointer-events:none; font-family: inherit; }
+
+.arch-panel {
+  background:#fff; border:1px solid var(--mp-border); border-radius: var(--radius-lg);
+  padding: 1.25rem 1.4rem; box-shadow: var(--shadow-soft); min-height: 480px;
+}
+.arch-panel h3 { margin: .2rem 0 .35rem; color: var(--mp-dark); }
+.arch-panel .role { color: var(--mp-red); font-weight:600; margin-bottom: .8rem; font-size:.92rem; }
+.arch-panel ul { margin:.3rem 0 0; padding-left: 1.1rem; color: var(--mp-text-muted); }
+.arch-panel li { margin:.28rem 0; }
+
+/* ============================================================
+   Feature cards
+   ============================================================ */
+.features {
+  display:grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.feat {
+  background:#fff; border:1px solid var(--mp-border); border-radius: var(--radius);
+  padding: 1.15rem 1.2rem; box-shadow: var(--shadow-soft);
+  transition: transform .16s ease, border-color .16s ease;
+}
+.feat:hover { transform: translateY(-2px); border-color:#d0d0d0; }
+.feat .icn {
+  width: 38px; height: 38px; border-radius: 10px;
+  display:grid; place-items:center; margin-bottom: .7rem;
+  background: var(--mp-red-soft); color: var(--mp-red); font-weight:800;
+}
+.feat h3 { margin:.2rem 0 .3rem; font-size: 1.02rem; color: var(--mp-dark); }
+.feat p { margin:0; color: var(--mp-text-muted); font-size:.92rem; }
+
+/* ============================================================
+   Talent Hub / Upload
+   ============================================================ */
+.hub-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap:2rem; align-items:start; }
+.hub-grid > * { min-width: 0; }
+.dropzone {
+  background:#fff; border: 2px dashed var(--mp-border); border-radius: var(--radius-lg);
+  padding: 2rem; text-align:center; transition: border-color .15s ease, background .15s ease;
+  cursor: pointer;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; min-height: 260px;
+}
+.dropzone:hover, .dropzone.drag { border-color: var(--mp-red); background: #fff5f6; }
+.dropzone .icn {
+  width: 56px; height: 56px; border-radius: 14px; margin: 0 auto .8rem;
+  background: var(--mp-red); color:#fff; display:grid; place-items:center; font-size:1.6rem; font-weight:800;
+  box-shadow: 0 10px 24px rgba(227,6,19,.3);
+}
+.dropzone h4 { margin:.2rem 0 .4rem; color: var(--mp-dark); }
+.dropzone p { margin:0 0 .8rem; color: var(--mp-text-muted); font-size:.9rem; }
+.dropzone input[type=file] { display:none; }
+
+.hub-side { display:flex; flex-direction:column; gap:.8rem; }
+.hub-inputs { display:grid; gap:.6rem; }
+.field {
+  display:flex; flex-direction:column; gap:.3rem;
+}
+.field label { font-size:.82rem; font-weight:600; color: var(--mp-dark); }
+.field input {
+  padding:.7rem .85rem; border-radius:10px; border:1px solid var(--mp-border);
+  font-size:.95rem; font-family:inherit; background:#fff; color: var(--mp-dark);
+}
+.field input:focus { outline:none; border-color: var(--mp-red); box-shadow: 0 0 0 3px rgba(227,6,19,.12); }
+
+.talent-list {
+  margin-top: 1rem; background:#fff; border:1px solid var(--mp-border); border-radius: var(--radius);
+  padding: .6rem; max-height: 220px; overflow:auto;
+}
+.talent-list .empty { padding:1rem; text-align:center; color: var(--mp-text-soft); font-size:.9rem; }
+.talent-item {
+  display:flex; align-items:center; justify-content:space-between; gap:.6rem;
+  padding:.55rem .7rem; border-radius:8px;
+}
+.talent-item + .talent-item { border-top:1px solid var(--mp-border); }
+.talent-item .name { font-weight:600; color: var(--mp-dark); font-size:.92rem; }
+.talent-item .meta { color: var(--mp-text-soft); font-size:.8rem; }
+.talent-item.is-profile { cursor:pointer; }
+.talent-item.is-profile:hover { background: var(--mp-gray); }
+.talent-item .view-link {
+  flex:0 0 auto; border:0; background:none; cursor:pointer; padding:.2rem;
+  font-family:inherit; font-size:.72rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:.05em; color: var(--mp-red);
+}
+.talent-item .view-link:hover { text-decoration:underline; }
+
+/* Creative profile modal */
+.profile-modal {
+  position: fixed; inset: 0; z-index: 60; padding: 1.25rem;
+  display: grid; place-items: center; background: rgba(31,31,31,.55);
+}
+.profile-modal[hidden] { display:none; }
+.profile-modal .pm-card {
+  position: relative; width: min(420px, 100%); padding: 1.6rem 1.7rem;
+  background:#fff; border-radius: var(--radius-lg); box-shadow: 0 18px 50px rgba(0,0,0,.28);
+}
+.profile-modal .pm-close {
+  position:absolute; top:.5rem; right:.7rem; border:0; background:none; cursor:pointer;
+  font-size:1.5rem; line-height:1; color: var(--mp-text-soft);
+}
+.profile-modal .pm-close:hover { color: var(--mp-dark); }
+.profile-modal h3 { margin:.1rem 0 .25rem; color: var(--mp-dark); }
+.profile-modal .pm-role { color: var(--mp-red); font-weight:600; font-size:.95rem; margin-bottom:1.2rem; }
+.profile-modal .pm-label {
+  font-size:.72rem; letter-spacing:.06em; text-transform:uppercase;
+  color: var(--mp-text-soft); margin-bottom:.25rem;
+}
+.profile-modal .pm-link { font-size:.92rem; word-break: break-all; }
+.profile-modal .pm-muted { color: var(--mp-text-soft); font-size:.9rem; }
+.profile-modal .pm-added { margin-top:1.2rem; font-size:.78rem; color: var(--mp-text-soft); }
+
+/* Collapsible profile capture — kept closed so onsite staff open it per creative. */
+.hub-panel {
+  background:#fff; border:1px solid var(--mp-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft); overflow:hidden;
+}
+.hub-toggle {
+  width:100%; display:flex; align-items:flex-start; justify-content:space-between; gap:.75rem;
+  padding: 1rem 1.1rem; background:none; border:0; cursor:pointer; font:inherit; text-align:left;
+}
+.hub-toggle:hover { background: var(--mp-gray); }
+.hub-toggle .t { display:block; font-weight:700; color: var(--mp-dark); font-size:1rem; }
+.hub-toggle .s { display:block; font-weight:500; font-size:.82rem; color: var(--mp-text-soft); margin-top:.15rem; }
+.hub-toggle .chev { transition: transform .2s ease; color: var(--mp-red); font-size:.8rem; flex:none; margin-top:.3rem; }
+.hub-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.hub-panel-body { display:none; padding: 0 1.1rem 1.1rem; }
+.hub-panel.open .hub-panel-body { display:block; }
+
+.qr-row { display:flex; gap:.5rem; align-items:stretch; }
+.qr-row input { flex:1; min-width:0; }
+.btn-qr {
+  flex:none; padding:.7rem .9rem; border-radius:10px; border:1px solid var(--mp-border);
+  background:#fff; cursor:pointer; font:inherit; font-size:.85rem; font-weight:600; color: var(--mp-dark);
+}
+.btn-qr:hover { border-color: var(--mp-red); color: var(--mp-red); }
+.qr-scanner { display:none; margin-top:.6rem; }
+.qr-scanner.on { display:block; }
+.qr-stage { position:relative; }
+/* contain, not cover: the user must see exactly the frame that gets decoded. */
+.qr-scanner video { display:block; width:100%; border-radius:10px; background:#000; aspect-ratio: 4 / 3; object-fit: contain; }
+.qr-scanner.done .qr-stage { display:none; }
+.qr-reticle {
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:60%; aspect-ratio:1; pointer-events:none;
+  border:2px solid rgba(255,255,255,.9); border-radius:12px;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,.28);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+/* Pulse while actively scanning so the user sees the camera is live. */
+.qr-scanner.scanning .qr-reticle { animation: qr-pulse 1.4s ease-in-out infinite; }
+/* Snap to green + brief glow when a code is captured. */
+.qr-scanner.hit .qr-reticle {
+  border-color: #26c46b;
+  box-shadow: 0 0 0 100vmax rgba(38,196,107,.22), 0 0 24px rgba(38,196,107,.75);
+  animation: none;
+}
+@keyframes qr-pulse {
+  0%, 100% { border-color: rgba(255,255,255,.95); }
+  50% { border-color: rgba(255,255,255,.4); }
+}
+.qr-alt { margin-top:.5rem; }
+.qr-alt .btn-qr { display:inline-block; }
+.qr-status { font-size:.82rem; color: var(--mp-text-soft); margin-top:.4rem; word-break: break-all; }
+
+/* ============================================================
+   Dashboard preview
+   ============================================================ */
+.dash-grid {
+  display:grid; gap: 1rem;
+  grid-template-columns: 1.4fr 1fr;
+}
+.dash-row { display:grid; gap:1rem; grid-template-columns: repeat(4, 1fr); margin-bottom: 1rem; }
+.kpi {
+  background:#fff; border:1px solid var(--mp-border); border-radius: var(--radius); padding: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+.kpi .l { font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color: var(--mp-text-soft); font-weight:700; }
+.kpi .v { font-size: 1.5rem; font-weight: 800; color: var(--mp-dark); letter-spacing:-.02em; margin-top:.2rem; }
+.kpi .d { font-size:.82rem; font-weight:600; margin-top:.15rem; }
+.kpi .d.up { color:#0f8a4a; }
+.kpi .d.down { color: var(--mp-red); }
+.card-panel {
+  background:#fff; border:1px solid var(--mp-border); border-radius: var(--radius);
+  padding: 1rem 1.1rem; box-shadow: var(--shadow-soft);
+}
+.card-panel h4 { margin:0 0 .6rem; font-size:.95rem; color: var(--mp-dark); }
+.chart-box { position: relative; height: 240px; }
+.top-list { list-style:none; margin:0; padding:0; }
+.top-list li {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:.55rem 0; border-top:1px solid var(--mp-border);
+}
+.top-list li:first-child { border-top:0; }
+.top-list .rank {
+  display:inline-grid; place-items:center; width:24px; height:24px; border-radius:6px;
+  background: var(--mp-red-soft); color: var(--mp-red); font-weight:800; font-size:.78rem; margin-right:.55rem;
+}
+.top-list .val { color: var(--mp-text-muted); font-size:.88rem; }
+
+/* ============================================================
+   Value grid
+   ============================================================ */
+.value-grid {
+  display:grid; gap:.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.value {
+  background:#fff; border:1px solid var(--mp-border); border-radius: 12px;
+  padding: 1rem 1.15rem; display:flex; align-items:center; gap:.7rem; box-shadow: var(--shadow-soft);
+}
+.value .check {
+  width: 26px; height:26px; border-radius:8px; background: var(--mp-red); color:#fff;
+  display:grid; place-items:center; font-size:.85rem; font-weight:800; flex-shrink:0;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+  background: var(--mp-dark); color:#dcdcdc; padding: 3rem 0 2rem; border-top:1px solid #000;
+}
+footer h5 { color:#fff; margin: 0 0 .6rem; font-size:.9rem; letter-spacing:.05em; text-transform:uppercase; }
+.footer-grid {
+  display:grid; grid-template-columns: 1.4fr 1fr; gap: 2rem;
+}
+.footer-grid ul { list-style:none; margin:0; padding:0; }
+.footer-grid li { margin:.35rem 0; color:#c9c9c9; font-size:.9rem; }
+.foot-brand { display:flex; align-items:center; gap:.6rem; margin-bottom:.5rem; }
+.foot-brand .mp-logo {
+  background: var(--mp-white); padding:.55rem .7rem; border-radius:2px;
+}
+.foot-brand .brand-sep { background:#555; }
+.foot-brand .retailai-mark { color:#fff; }
+.copy {
+  margin-top: 2rem; padding-top: 1rem; border-top:1px solid #2a2a2a;
+  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  color:#9a9a9a; font-size:.85rem;
+}
+.powered {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background: rgba(255,255,255,.06); padding: .35rem .7rem; border-radius: 2px;
+  font-size:.82rem; color:#fff;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 960px) {
+  .hero-grid, .about-grid, .arch-wrap, .hub-grid, .dash-grid, .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .dash-row { grid-template-columns: repeat(2, 1fr); }
+  .nav-inner { flex-wrap: wrap; gap: .6rem; }
+  .nav-links {
+    width: 100%; gap: .9rem; overflow-x: auto; padding-bottom: .25rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-links a { flex: 0 0 auto; font-size: .76rem; }
+  .hero { padding: 3.5rem 0; }
+  .hero { background: var(--mp-white); }
+  .hero-card { inset: 30% 12% 20% 12%; }
+}
+@media (max-width: 520px) {
+  .about-list { grid-template-columns: 1fr; }
+  .nav-inner { min-height:68px; }
+  .mp-logo img { width:105px; height:auto; }
+  .brand-row { gap:.65rem; }
+  .retailai-mark { font-size:.92rem; }
+  .dash-grid, .card-panel, .chart-box { min-width:0; max-width:100%; }
+  .card-panel { overflow:hidden; }
+  .chart-box canvas { width:100% !important; max-width:100% !important; }
+}
+
+/* ============================================================
+   Chat widget (floating)
+   ============================================================ */
+.chat-fab {
+  position: fixed; right: 22px; bottom: 22px; z-index: 50;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--mp-red);
+  color: #fff; border: none; cursor: pointer;
+  box-shadow: 0 14px 32px rgba(227,6,19,.45);
+  display: grid; place-items: center;
+  transition: transform .15s ease;
+}
+.chat-fab:hover { transform: translateY(-2px) scale(1.03); }
+.chat-fab svg { width: 26px; height: 26px; fill: #fff; }
+
+.chat-panel {
+  position: fixed; right: 22px; bottom: 96px; z-index: 51;
+  width: 380px; max-width: calc(100vw - 44px);
+  height: 560px; max-height: calc(100vh - 130px);
+  background: #fff; border: 1px solid var(--mp-border);
+  border-radius: 18px; box-shadow: 0 30px 60px rgba(0,0,0,.22);
+  display: none; flex-direction: column; overflow: hidden;
+  transform-origin: bottom right;
+  animation: chatIn .18s ease-out;
+}
+.chat-panel.open { display: flex; }
+@keyframes chatIn {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+.chat-head {
+  padding: .85rem 1rem;
+  background: linear-gradient(135deg, var(--mp-red), #7a0209);
+  color: #fff; display: flex; align-items: center; gap: .6rem;
+}
+.chat-head .avatar {
+  width: 32px; height: 32px; border-radius: 9px;
+  background: rgba(255,255,255,.15); display: grid; place-items: center;
+  font-weight: 800;
+}
+.chat-head .meta { line-height: 1.15; }
+.chat-head .t1 { font-weight: 700; font-size: .95rem; }
+.chat-head .t2 { font-size: .78rem; opacity: .85; }
+.chat-head .chat-export {
+  margin-left: auto; background: rgba(255,255,255,.15); color: #fff;
+  border: none; padding: .32rem .6rem; border-radius: 8px; cursor: pointer;
+  font: inherit; font-size: .72rem; font-weight: 650; white-space: nowrap;
+}
+.chat-head .chat-export:hover { background: rgba(255,255,255,.28); }
+.chat-head .chat-export:disabled { opacity: .6; cursor: default; }
+.chat-head .close {
+  margin-left: .4rem; background: rgba(255,255,255,.15); color: #fff;
+  border: none; width: 28px; height: 28px; border-radius: 8px; cursor: pointer;
+  font-size: 1rem; line-height: 1;
+}
+.chat-head .close:hover { background: rgba(255,255,255,.28); }
+
+.chat-agent-bar {
+  display: flex; gap: .35rem; padding: .55rem .75rem;
+  border-bottom: 1px solid var(--mp-border);
+  background: var(--mp-gray); overflow-x: auto;
+}
+.chat-agent-bar button {
+  flex: 0 0 auto;
+  border: 1px solid var(--mp-border); background: #fff;
+  color: var(--mp-text-muted);
+  padding: .35rem .65rem; border-radius: 999px;
+  font-size: .78rem; font-weight: 600; cursor: pointer;
+  white-space: nowrap;
+}
+.chat-agent-bar button:hover { color: var(--mp-dark); }
+.chat-agent-bar button.active {
+  background: var(--mp-red); border-color: var(--mp-red); color: #fff;
+}
+
+.chat-body {
+  flex: 1; overflow-y: auto; padding: .9rem;
+  display: flex; flex-direction: column; gap: .55rem;
+  background: #fafafa;
+}
+.msg { display: flex; }
+.msg .bubble {
+  max-width: 85%; padding: .6rem .8rem; border-radius: 14px;
+  font-size: .92rem; line-height: 1.45; white-space: pre-wrap; word-wrap: break-word;
+}
+.msg.user { justify-content: flex-end; }
+.msg.user .bubble {
+  background: var(--mp-red); color: #fff; border-bottom-right-radius: 4px;
+}
+.msg.ai .bubble {
+  background: #fff; color: var(--mp-dark);
+  border: 1px solid var(--mp-border); border-bottom-left-radius: 4px;
+}
+.msg.ai .chat-heading {
+  display: inline-block; margin-top: .35rem; font-weight: 750;
+}
+.msg.ai .chat-heading:first-child { margin-top: 0; }
+.msg.ai { flex-direction: column; align-items: flex-start; }
+.chat-actions {
+  display: flex; gap: .4rem; margin: .3rem 0 .1rem 0;
+}
+.chat-actions button {
+  font: inherit; font-size: .74rem; line-height: 1;
+  padding: .32rem .6rem; border-radius: 999px; cursor: pointer;
+  background: #fff; color: var(--mp-text-muted);
+  border: 1px solid var(--mp-border); transition: all .15s ease;
+}
+.chat-actions button:hover {
+  color: var(--mp-red); border-color: var(--mp-red); background: var(--mp-red-soft);
+}
+.chat-actions button:focus-visible { outline: 2px solid var(--mp-red); outline-offset: 1px; }
+
+.chat-visual {
+  width: 100%; max-width: 85%; margin-bottom: .45rem;
+  background: #fff; border: 1px solid var(--mp-border); border-radius: 14px;
+  padding: .65rem .7rem;
+}
+.chat-visual-title {
+  font-size: .8rem; font-weight: 750; color: var(--mp-dark); margin-bottom: .4rem;
+}
+.chat-visual-canvas { position: relative; height: 190px; }
+.chat-visual-insight {
+  margin-top: .4rem; font-size: .78rem; color: var(--mp-text-muted); line-height: 1.4;
+}
+.chat-kpis {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(105px, 1fr)); gap: .45rem;
+}
+.chat-kpi {
+  background: var(--mp-gray); border-radius: 10px; padding: .5rem .55rem;
+}
+.chat-kpi-label {
+  font-size: .66rem; text-transform: uppercase; letter-spacing: .06em; color: var(--mp-text-soft);
+}
+.chat-kpi-value { font-size: 1.05rem; font-weight: 800; color: var(--mp-red); line-height: 1.25; }
+.chat-kpi-note { font-size: .7rem; color: var(--mp-text-muted); }
+
+.chat-creative {
+  width: 100%; max-width: 85%; margin-bottom: .45rem;
+  background: #fff; border: 1px solid var(--mp-border); border-radius: 14px;
+  padding: .6rem .65rem; display: flex; gap: .6rem;
+}
+.chat-creative-avatar {
+  flex: 0 0 58px; width: 58px; height: 58px; border-radius: 12px;
+  background: var(--mp-red); color: #fff; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: .9rem; letter-spacing: .02em;
+}
+.chat-creative-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chat-creative-body { min-width: 0; flex: 1; }
+.chat-creative-name { font-size: .88rem; font-weight: 750; color: var(--mp-dark); }
+.chat-creative-meta { font-size: .74rem; color: var(--mp-text-muted); margin-top: .1rem; }
+.chat-creative-bio { font-size: .78rem; color: var(--mp-text); margin-top: .3rem; line-height: 1.4; }
+.chat-creative-detail { font-size: .72rem; color: var(--mp-text-muted); margin-top: .16rem; line-height: 1.35; }
+.chat-creative-detail strong { color: var(--mp-text); font-weight: 700; }
+.chat-creative-why { font-size: .78rem; color: var(--mp-text); margin-top: .3rem; line-height: 1.4; }
+.chat-creative-scores { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .35rem; }
+.chat-chip {
+  font-size: .68rem; padding: .18rem .45rem; border-radius: 999px;
+  background: var(--mp-red-soft); color: var(--mp-red); font-weight: 650;
+}
+.chat-chip.neutral { background: var(--mp-gray); color: var(--mp-text-muted); }
+.chat-creative-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; }
+.chat-creative-links a {
+  font-size: .74rem; color: var(--mp-red); font-weight: 650; text-decoration: none;
+  border-bottom: 1px solid rgba(230,32,42,.35);
+}
+.chat-creative-links a:hover { border-bottom-color: var(--mp-red); }
+.chat-creative-links span { font-size: .74rem; color: var(--mp-text-soft); }
+.msg.sys .bubble {
+  background: transparent; color: var(--mp-text-soft);
+  font-size: .8rem; padding: .2rem .3rem;
+}
+.msg.err .bubble {
+  background: #fff4f5; color: #8a0a13; border: 1px solid #f2c1c6;
+}
+
+.typing {
+  display: inline-flex; gap: 4px; padding: .55rem .8rem;
+  background: #fff; border: 1px solid var(--mp-border);
+  border-radius: 14px; border-bottom-left-radius: 4px;
+}
+.typing span {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--mp-red);
+  animation: blink 1.2s infinite ease-in-out;
+}
+.typing span:nth-child(2) { animation-delay: .15s; }
+.typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes blink {
+  0%,80%,100% { opacity: .25; transform: translateY(0); }
+  40%         { opacity: 1;   transform: translateY(-2px); }
+}
+
+.chat-foot {
+  padding: .6rem; border-top: 1px solid var(--mp-border); background: #fff;
+  display: flex; gap: .4rem;
+}
+.chat-foot input {
+  flex: 1; padding: .65rem .8rem; border: 1px solid var(--mp-border);
+  border-radius: 10px; font-family: inherit; font-size: .93rem;
+  background: #fff; color: var(--mp-dark);
+}
+.chat-foot input:focus { outline: none; border-color: var(--mp-red); box-shadow: 0 0 0 3px rgba(227,6,19,.12); }
+.chat-foot button {
+  border: none; background: var(--mp-red); color: #fff;
+  padding: 0 .95rem; border-radius: 10px; font-weight: 600; cursor: pointer;
+}
+.chat-foot button:hover { background: var(--mp-red-hover); }
+.chat-foot button:disabled { opacity: .55; cursor: not-allowed; }
+
+.chat-note {
+  padding: .35rem .75rem .55rem;
+  font-size: .72rem; color: var(--mp-text-soft); text-align: center; background: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================== NAV ================== -->
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand-row">
+      <a class="mp-logo" href="#about" aria-label="Mr Price RetailAI home">
+        <img src="https://cdn.omni.mrpg.com/cdn/web/assets/images/mrp-logo.svg" alt="Mr Price" width="131" height="25" />
+      </a>
+      <span class="brand-sep" aria-hidden="true"></span>
+      <span class="retailai-mark">Retail<span class="ai-accent">AI</span></span>
+    </div>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#talent">Talent Hub</a>
+      <a href="#dashboard">Dashboard</a>
+      <button type="button" class="btn btn-primary" data-open-chat="concierge">Launch RetailAI</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ================== ABOUT ================== -->
+<section id="about" data-pane="about">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">About RetailAI</div>
+      <h2>One intelligent ecosystem for retail decisions</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <figure class="about-collab">
+          <img src="assets/campaigns/mrp-sphokuhle.png" alt="Mr Price x Sphokuhle collaboration campaign" width="1354" height="571" />
+          <figcaption class="collab-slang" aria-label="Sharp sharp, that's the drip"><span>Sharp</span><span>sharp</span><span>&mdash;</span><span>that's&nbsp;the&nbsp;drip.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="stat-card reveal">
+        <h3 style="margin:0 0 1rem;">Impact at a glance</h3>
+        <div class="stat-row">
+          <div class="stat"><div class="n">5</div><div class="l">Specialized AI agents</div></div>
+          <div class="stat"><div class="n">40%</div><div class="l">Faster campaign briefs</div></div>
+          <div class="stat"><div class="n">3.2×</div><div class="l">Creative talent matches</div></div>
+          <div class="stat"><div class="n">18%</div><div class="l">Uplift in campaign ROI</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== ARCHITECTURE ================== -->
+<section id="architecture" class="alt" data-pane="architecture">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Architecture</div>
+      <h2>An orchestrated multi-agent system</h2>
+      <p class="section-lede">
+        A single Concierge agent routes every request to the right specialist and
+        consolidates their outputs into a business-ready answer. Click any agent to
+        see its responsibilities.
+      </p>
+    </div>
+
+    <div class="arch-wrap">
+      <div class="arch-canvas reveal" aria-label="RetailAI architecture diagram">
+        <svg viewBox="0 0 720 480" role="img">
+          <defs>
+            <linearGradient id="gRed" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#E30613"/>
+              <stop offset="1" stop-color="#7a0209"/>
+            </linearGradient>
+            <linearGradient id="gDark" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2a2a2a"/>
+              <stop offset="1" stop-color="#0f0f0f"/>
+            </linearGradient>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+                    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#9a9a9a"/>
+            </marker>
+          </defs>
+
+          <!-- Connectors -->
+          <g stroke="#c9c9c9" stroke-width="1.6" fill="none" marker-end="url(#arrow)">
+            <line x1="360" y1="70" x2="360" y2="130"/>
+            <line x1="360" y1="200" x2="360" y2="240"/>
+            <line x1="360" y1="290" x2="120" y2="360"/>
+            <line x1="360" y1="290" x2="280" y2="360"/>
+            <line x1="360" y1="290" x2="440" y2="360"/>
+            <line x1="360" y1="290" x2="600" y2="360"/>
+          </g>
+
+          <!-- User -->
+          <g class="node" data-agent="user">
+            <rect x="290" y="20" width="140" height="50" rx="12" fill="url(#gDark)" stroke="#000"/>
+            <text x="360" y="50" text-anchor="middle" fill="#fff" font-weight="700" font-size="14">User / Team</text>
+          </g>
+
+          <!-- Concierge -->
+          <g class="node selected" data-agent="concierge">
+            <rect x="235" y="130" width="250" height="70" rx="14" fill="url(#gRed)" stroke="#7a0209"/>
+            <text x="360" y="163" text-anchor="middle" fill="#fff" font-weight="800" font-size="15">RetailAI Concierge</text>
+            <text x="360" y="184" text-anchor="middle" fill="#ffe6e9" font-size="11">Orchestrator · routes &amp; consolidates</text>
+          </g>
+
+          <!-- Specialist agents -->
+          <g class="node" data-agent="campaign">
+            <rect x="40" y="360" width="160" height="70" rx="12" fill="#fff" stroke="#d6d6d6"/>
+            <text x="120" y="390" text-anchor="middle" fill="#1F1F1F" font-weight="700" font-size="13">Campaign</text>
+            <text x="120" y="408" text-anchor="middle" fill="#7A7A7A" font-size="11">Intelligence Agent</text>
+          </g>
+          <g class="node" data-agent="sentiment">
+            <rect x="210" y="360" width="160" height="70" rx="12" fill="#fff" stroke="#d6d6d6"/>
+            <text x="290" y="390" text-anchor="middle" fill="#1F1F1F" font-weight="700" font-size="13">Sentiment</text>
+            <text x="290" y="408" text-anchor="middle" fill="#7A7A7A" font-size="11">&amp; Market Intel</text>
+          </g>
+          <g class="node" data-agent="analytics">
+            <rect x="380" y="360" width="160" height="70" rx="12" fill="#fff" stroke="#d6d6d6"/>
+            <text x="460" y="390" text-anchor="middle" fill="#1F1F1F" font-weight="700" font-size="13">Performance</text>
+            <text x="460" y="408" text-anchor="middle" fill="#7A7A7A" font-size="11">Agent</text>
+          </g>
+          <g class="node" data-agent="portfolio">
+            <rect x="550" y="360" width="160" height="70" rx="12" fill="#fff" stroke="#d6d6d6"/>
+            <text x="630" y="390" text-anchor="middle" fill="#1F1F1F" font-weight="700" font-size="13">Portfolio</text>
+            <text x="630" y="408" text-anchor="middle" fill="#7A7A7A" font-size="11">Creative Talent</text>
+          </g>
+        </svg>
+      </div>
+
+      <aside class="arch-panel reveal" id="archPanel" aria-live="polite">
+        <div class="section-eyebrow" style="margin-bottom:.3rem">Selected</div>
+        <h3 id="apName">RetailAI Concierge</h3>
+        <div class="role" id="apRole">Master AI assistant and orchestrator</div>
+        <p style="color:var(--mp-text-muted); margin:0 0 .5rem;" id="apSum">
+          Receives every request, understands intent, delegates to specialists and combines
+          their outputs into a single, business-ready recommendation.
+        </p>
+        <h4 style="margin: .6rem 0 .2rem; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color: var(--mp-text-soft);">Responsibilities</h4>
+        <ul id="apList">
+          <li>Understand employee requests</li>
+          <li>Determine which AI specialist to use</li>
+          <li>Coordinate multiple agents</li>
+          <li>Consolidate information</li>
+          <li>Deliver business-ready responses</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================== TALENT HUB / UPLOAD ================== -->
+<section id="talent" class="alt" data-pane="talent">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Creative Talent Hub</div>
+      <h2>Portfolio upload portal</h2>
+      <p class="section-lede">
+        Creatives submit their portfolios and profiles here. RetailAI indexes each
+        submission and makes it searchable for the Portfolio Intelligence agent.
+      </p>
+    </div>
+
+    <div class="hub-grid">
+      <div class="reveal">
+        <label class="dropzone" id="dropzone" for="fileInput">
+          <div class="icn">↑</div>
+          <h4>Upload portfolio, images, documents or CV</h4>
+          <p>Drag &amp; drop files here, or click to browse. Supported: PDF, DOCX, PNG, JPG, MP4, ZIP.</p>
+          <span class="btn btn-primary" style="pointer-events:none">Choose files</span>
+          <input type="file" id="fileInput" multiple />
+        </label>
+
+        <div class="talent-list" id="fileList" aria-live="polite">
+          <div class="empty">No submissions yet. Uploaded files will appear here.</div>
+        </div>
+      </div>
+
+      <aside class="reveal">
+        <div class="hub-panel" id="profilePanel">
+          <button class="hub-toggle" type="button" id="profileToggle" aria-expanded="false" aria-controls="profileBody">
+            <span>
+              <span class="t">Creative profile</span>
+              <span class="s">Tap to open — quick capture for onsite campaigns</span>
+            </span>
+            <span class="chev" aria-hidden="true">▼</span>
+          </button>
+          <div class="hub-panel-body" id="profileBody">
+            <form class="hub-inputs" id="talentForm" autocomplete="off">
+              <div class="field"><label for="tfName">Full name</label><input id="tfName" type="text" placeholder="e.g. Naledi Khumalo" /></div>
+              <div class="field"><label for="tfRole">Creative role</label><input id="tfRole" type="text" placeholder="Photographer · Stylist · Designer …" /></div>
+              <div class="field">
+                <label for="tfPortfolio">Portfolio link</label>
+                <div class="qr-row">
+                  <input id="tfPortfolio" type="url" placeholder="Instagram, TikTok, personal site — any platform" />
+                  <button class="btn-qr" type="button" id="qrScanBtn">Scan QR</button>
+                </div>
+                <div class="qr-scanner" id="qrScanner">
+                  <div class="qr-stage">
+                    <video id="qrVideo" playsinline autoplay muted></video>
+                    <div class="qr-reticle" aria-hidden="true"></div>
+                  </div>
+                  <div class="qr-status" id="qrStatus"></div>
+                </div>
+                <div class="qr-alt">
+                  <label class="btn-qr" for="qrPhoto">Upload QR photo</label>
+                  <input type="file" id="qrPhoto" accept="image/*" capture="environment" hidden />
+                </div>
+              </div>
+              <button class="btn btn-dark" type="submit" style="margin-top:.35rem">Add to talent database</button>
+            </form>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================== DASHBOARD ================== -->
+<section id="dashboard" data-pane="dashboard">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Analytics Dashboard Preview</div>
+      <h2>Executive-ready retail intelligence</h2>
+      <p class="section-lede">Live view of the RetailAI performance cockpit, aggregated from the RetailAI agent datasets and served through Power BI and Microsoft Fabric in production.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="dash-row">
+        <div class="kpi"><div class="l">Attributed Revenue</div><div class="v">R 270m</div><div class="d up">▲ 3.1% vs forecast · 19 live campaigns</div></div>
+        <div class="kpi"><div class="l">Positive Sentiment</div><div class="v">52.3%</div><div class="d up">▲ 26.7 pts net</div></div>
+        <div class="kpi"><div class="l">Campaigns Live</div><div class="v">19</div><div class="d">of 120 in calendar</div></div>
+        <div class="kpi"><div class="l">Talent Matches</div><div class="v">220</div><div class="d">144 creatives matched</div></div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="card-panel">
+          <h4>Attributed revenue by season</h4>
+          <div class="chart-box"><canvas id="chartRevenue"></canvas></div>
+        </div>
+        <div class="card-panel">
+          <h4>Customer sentiment mix</h4>
+          <div class="chart-box"><canvas id="chartSentiment"></canvas></div>
+        </div>
+      </div>
+
+      <div class="dash-grid" style="margin-top:1rem">
+        <div class="card-panel">
+          <h4>Trending campaigns · engagement</h4>
+          <div class="chart-box"><canvas id="chartCampaigns"></canvas></div>
+        </div>
+        <div class="card-panel">
+          <h4>Top creatives this quarter</h4>
+          <ul class="top-list">
+            <li><span><span class="rank">1</span>Ayesha Jacobs | Stylist</span><span class="val">97.0 · RetailAI fit score</span></li>
+            <li><span><span class="rank">2</span>Amahle Petersen | Stylist</span><span class="val">92.7</span></li>
+            <li><span><span class="rank">3</span>Tshepo Radebe | Content creator</span><span class="val">92.3</span></li>
+            <li><span><span class="rank">4</span>Tumi Jacobs | Stylist</span><span class="val">92.3</span></li>
+            <li><span><span class="rank">5</span>Kabelo Petersen | Community creator</span><span class="val">91.7</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== CREATIVE PROFILE MODAL ================== -->
+<div class="profile-modal" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="pmName" hidden>
+  <div class="pm-card">
+    <button class="pm-close" type="button" id="pmClose" aria-label="Close profile">&times;</button>
+    <div class="section-eyebrow">Creative profile</div>
+    <h3 id="pmName"></h3>
+    <div class="pm-role" id="pmRole"></div>
+    <div class="pm-label">Portfolio link</div>
+    <div id="pmLinkWrap"></div>
+    <div class="pm-added" id="pmAdded"></div>
+  </div>
+</div>
+
+<!-- ================== CHAT WIDGET ================== -->
+<button class="chat-fab" id="chatFab" aria-label="Open RetailAI chat" title="Ask RetailAI">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2Z"/></svg>
+</button>
+
+<aside class="chat-panel" id="chatPanel" role="dialog" aria-label="RetailAI chat">
+  <div class="chat-head">
+    <div class="avatar">R</div>
+    <div class="meta">
+      <div class="t1" id="chatAgentName">RetailAI Concierge</div>
+      <div class="t2">Live · Azure AI Foundry Agents</div>
+    </div>
+    <button class="chat-export" id="chatExport" type="button" title="Download the whole chat as a PDF">Download chat</button>
+    <button class="close" id="chatClose" aria-label="Close chat">×</button>
+  </div>
+  <div class="chat-agent-bar" role="tablist" aria-label="Choose agent">
+    <button type="button" data-agent="concierge" class="active">Concierge</button>
+    <button type="button" data-agent="campaign">Campaign</button>
+    <button type="button" data-agent="sentiment">Sentiment</button>
+    <button type="button" data-agent="analytics">Performance</button>
+    <button type="button" data-agent="portfolio">Portfolio</button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="msg ai"><div class="bubble">Hi, I'm the RetailAI Concierge. Ask about campaigns, customers, analytics, or creative talent. Pick a specialist above to talk to them directly.</div></div>
+  </div>
+  <form class="chat-foot" id="chatForm" autocomplete="off">
+    <input id="chatInput" type="text" placeholder="Ask RetailAI anything…" aria-label="Message" />
+    <button type="submit" id="chatSend">Send</button>
+  </form>
+  <div class="chat-note">Connected securely</div>
+</aside>
+
+<!-- ================== FOOTER ================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="mp-logo">
+            <img src="https://cdn.omni.mrpg.com/cdn/web/assets/images/mrp-logo.svg" alt="Mr Price" width="131" height="25" />
+          </span>
+          <span class="brand-sep" aria-hidden="true"></span>
+          <span class="retailai-mark">Retail<span class="ai-accent">AI</span></span>
+        </div>
+        <p style="color:#c9c9c9; max-width: 28rem;">
+          AI-powered creative and marketing intelligence for Mr Price Group, unifying
+          strategy, creative, sentiment, analytics and talent in a single ecosystem.
+        </p>
+        <span class="powered">⚡ Powered by Microsoft Azure AI Foundry</span>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about" style="color:#c9c9c9">About</a></li>
+          <li><a href="#architecture" style="color:#c9c9c9">Architecture</a></li>
+          <li><a href="#dashboard" style="color:#c9c9c9">Dashboard</a></li>
+          <li><a href="#talent" style="color:#c9c9c9">Talent Hub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="year"></span> RetailAI · Mr Price Innovation Platform</span>
+      <span>Prototype UI · not affiliated with the Mr Price trademark holder</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   Year + reveal on scroll
+   ============================================================ */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ============================================================
+   Section panes: one section visible at a time, driven by the hash
+   ============================================================ */
+const DEFAULT_PANE = 'about';
+const paneSections = [...document.querySelectorAll('section[data-pane]')];
+const paneNames = new Set(paneSections.map((s) => s.dataset.pane));
+const paneListeners = [];
+
+function onPaneShown(fn) { paneListeners.push(fn); }
+
+function routeToPane(hash) {
+  const target = (hash || '').replace(/^#/, '');
+  const pane = paneNames.has(target) ? target : DEFAULT_PANE;
+  paneSections.forEach((s) => s.classList.toggle('pane-on', s.dataset.pane === pane));
+  document.querySelectorAll('.nav-links a').forEach((a) => {
+    a.classList.toggle('active', (a.getAttribute('href') || '').slice(1) === pane);
+  });
+
+  window.scrollTo({ top: 0, behavior: 'auto' });
+
+  paneListeners.forEach((fn) => fn(pane));
+}
+
+window.addEventListener('hashchange', () => routeToPane(location.hash));
+routeToPane(location.hash);
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach((el) => {
+  if (el.getBoundingClientRect().top < window.innerHeight) {
+    el.classList.add('in');
+  } else {
+    io.observe(el);
+  }
+});
+
+/* ============================================================
+   Architecture: clickable nodes
+   ============================================================ */
+const AGENTS = {
+  user: {
+    name: 'User / Team',
+    role: 'Retail employee, marketer, buyer, or creative lead',
+    sum: 'Anyone at Mr Price can ask RetailAI a question in plain language and receive a business-ready answer.',
+    list: [
+      'Ask questions in natural language',
+      'Upload data, briefs, or portfolios',
+      'Consume recommendations & reports'
+    ]
+  },
+  concierge: {
+    name: 'RetailAI Concierge',
+    role: 'Master AI assistant and orchestrator',
+    sum: 'Receives every request, understands intent, delegates to specialists and combines their outputs into a single, business-ready recommendation.',
+    list: [
+      'Understand employee requests',
+      'Determine which AI specialist to use',
+      'Coordinate multiple agents',
+      'Consolidate information',
+      'Deliver business-ready responses'
+    ]
+  },
+  campaign: {
+    name: 'Campaign Intelligence Agent',
+    role: 'AI Retail Marketing Strategist',
+    sum: 'Turns a business objective into a full campaign concept: audience, positioning, channels, creative brief, and go-to-market plan.',
+    list: [
+      'Create campaigns',
+      'Generate marketing strategies',
+      'Build creative briefs',
+      'Recommend target audiences',
+      'Plan omnichannel activities',
+      'Generate campaign concepts'
+    ]
+  },
+  sentiment: {
+    name: 'Sentiment & Market Intelligence Agent',
+    role: 'Voice of the Customer',
+    sum: 'Continuously listens across reviews, social channels and market signals to surface what customers really think and what they want next.',
+    list: [
+      'Analyze reviews',
+      'Understand customer opinion',
+      'Monitor brand perception',
+      'Detect retail trends',
+      'Discover customer pain points'
+    ]
+  },
+  analytics: {
+    name: 'Performance Agent',
+    role: 'Retail Business Intelligence Specialist',
+    sum: 'Measures what worked, quantifies ROI, and highlights the revenue opportunities that deserve attention this week.',
+    list: [
+      'Analyze campaign performance',
+      'Measure ROI',
+      'Monitor KPIs',
+      'Track engagement',
+      'Identify revenue opportunities',
+      'Generate executive reports'
+    ]
+  },
+  portfolio: {
+    name: 'Creative Portfolio Intelligence Agent',
+    role: 'Creative Talent Discovery Engine',
+    sum: 'Indexes creative portfolios and matches the right talent to any brief, from a single photographer to a full campaign crew.',
+    list: [
+      'Analyze creative portfolios',
+      'Match creatives to campaigns',
+      'Discover talent',
+      'Build project teams',
+      'Assess creative skills'
+    ]
+  }
+};
+
+const apName = document.getElementById('apName');
+const apRole = document.getElementById('apRole');
+const apSum  = document.getElementById('apSum');
+const apList = document.getElementById('apList');
+
+document.querySelectorAll('.node').forEach((n) => {
+  n.addEventListener('click', () => {
+    document.querySelectorAll('.node').forEach((x) => x.classList.remove('selected'));
+    n.classList.add('selected');
+    const key = n.getAttribute('data-agent');
+    const a = AGENTS[key];
+    if (!a) return;
+    apName.textContent = a.name;
+    apRole.textContent = a.role;
+    apSum.textContent  = a.sum;
+    apList.innerHTML   = a.list.map((li) => `<li>${li}</li>`).join('');
+  });
+});
+
+/* ============================================================
+   Talent Hub: file uploads (client-side listing only)
+   ============================================================ */
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const fileList = document.getElementById('fileList');
+const submissions = [];
+
+function fmtSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/1024/1024).toFixed(2) + ' MB';
+}
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+}
+// Only http(s) links are rendered as anchors, so a scanned QR cannot inject javascript: or data: URLs.
+function safeUrl(raw) {
+  if (!raw) return null;
+  const candidate = /^[a-z][a-z0-9+.-]*:/i.test(raw) ? raw : 'https://' + raw;
+  try {
+    const u = new URL(candidate);
+    return (u.protocol === 'http:' || u.protocol === 'https:') ? u.href : null;
+  } catch { return null; }
+}
+function renderList() {
+  if (submissions.length === 0) {
+    fileList.innerHTML = '<div class="empty">No submissions yet. Uploaded files will appear here.</div>';
+    return;
+  }
+  fileList.innerHTML = submissions.map((s, i) => {
+    if (s.kind === 'profile') {
+      return `
+    <div class="talent-item is-profile" data-profile="${i}">
+      <div>
+        <div class="name">${esc(s.name)}</div>
+        <div class="meta">${esc(s.role || 'Creative profile')}</div>
+      </div>
+      <button class="view-link" type="button" data-profile="${i}">View profile</button>
+    </div>`;
+    }
+    return `
+    <div class="talent-item">
+      <div>
+        <div class="name">${esc(s.name)}</div>
+        <div class="meta">${esc(s.role || 'File upload')}${s.size ? ' · ' + fmtSize(s.size) : ''}${s.type ? ' · ' + esc(s.type) : ''}</div>
+      </div>
+      <span class="meta">${new Date(s.at).toLocaleTimeString()}</span>
+    </div>`;
+  }).join('');
+}
+function addFiles(files) {
+  Array.from(files).forEach((f) => {
+    submissions.unshift({ name: f.name, size: f.size, type: f.type || 'file', at: Date.now() });
+  });
+  renderList();
+}
+fileInput.addEventListener('change', (e) => addFiles(e.target.files));
+['dragenter','dragover'].forEach((ev) =>
+  dropzone.addEventListener(ev, (e) => { e.preventDefault(); dropzone.classList.add('drag'); }));
+['dragleave','drop'].forEach((ev) =>
+  dropzone.addEventListener(ev, (e) => { e.preventDefault(); dropzone.classList.remove('drag'); }));
+dropzone.addEventListener('drop', (e) => { if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+
+document.getElementById('talentForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('tfName').value.trim();
+  const role = document.getElementById('tfRole').value.trim();
+  const portfolio = document.getElementById('tfPortfolio').value.trim();
+  if (!name) { document.getElementById('tfName').focus(); return; }
+  submissions.unshift({
+    kind: 'profile',
+    name,
+    role: role || 'Creative profile',
+    portfolio: safeUrl(portfolio),
+    at: Date.now(),
+  });
+  renderList();
+  e.target.reset();
+  closeQrScan();
+});
+
+/* ---- Creative profile modal ---- */
+const profileModal = document.getElementById('profileModal');
+const pmName = document.getElementById('pmName');
+const pmRole = document.getElementById('pmRole');
+const pmLinkWrap = document.getElementById('pmLinkWrap');
+const pmAdded = document.getElementById('pmAdded');
+let pmLastFocus = null;
+
+function openProfile(index) {
+  const s = submissions[index];
+  if (!s || s.kind !== 'profile') return;
+  pmLastFocus = document.activeElement;
+  pmName.textContent = s.name;
+  pmRole.textContent = s.role;
+  pmLinkWrap.innerHTML = s.portfolio
+    ? `<a class="pm-link" href="${esc(s.portfolio)}" target="_blank" rel="noopener noreferrer">${esc(s.portfolio)}</a>`
+    : '<div class="pm-muted">No portfolio link captured.</div>';
+  pmAdded.textContent = 'Added ' + new Date(s.at).toLocaleString();
+  profileModal.hidden = false;
+  document.getElementById('pmClose').focus();
+}
+function closeProfile() {
+  profileModal.hidden = true;
+  if (pmLastFocus) pmLastFocus.focus();
+}
+
+fileList.addEventListener('click', (e) => {
+  const el = e.target.closest('[data-profile]');
+  if (el) openProfile(Number(el.dataset.profile));
+});
+document.getElementById('pmClose').addEventListener('click', closeProfile);
+profileModal.addEventListener('click', (e) => { if (e.target === profileModal) closeProfile(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !profileModal.hidden) closeProfile(); });
+
+/* ---- Creative profile: collapsible panel + QR portfolio capture ---- */
+const profilePanel = document.getElementById('profilePanel');
+const profileToggle = document.getElementById('profileToggle');
+const qrScanBtn = document.getElementById('qrScanBtn');
+const qrScanner = document.getElementById('qrScanner');
+const qrVideo = document.getElementById('qrVideo');
+const qrStatus = document.getElementById('qrStatus');
+let qrStream = null;
+let qrTimer = null;
+let qrDetector = null;
+let jsQrLoader = null;
+const qrCanvas = document.createElement('canvas');
+const qrCtx = qrCanvas.getContext('2d', { willReadFrequently: true });
+
+// jsQR is the fallback decoder for browsers without the native BarcodeDetector API.
+function loadJsQr() {
+  if (window.jsQR) return Promise.resolve(window.jsQR);
+  if (!jsQrLoader) {
+    jsQrLoader = new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js';
+      s.onload = () => resolve(window.jsQR);
+      s.onerror = () => { jsQrLoader = null; reject(new Error('jsQR failed to load')); };
+      document.head.appendChild(s);
+    });
+  }
+  return jsQrLoader;
+}
+
+// Fractional crops, widest first: a code that fills the frame decodes on pass 0,
+// a small or distant one only becomes readable once cropped and upscaled.
+// Inverted (light-on-dark) codes are rare, so only the tightest crop pays for that second look.
+const QR_REGIONS = [
+  { box: [0, 0, 1, 1], invert: 'dontInvert' },
+  { box: [0.2, 0.1, 0.6, 0.8], invert: 'dontInvert' }, // reticle-shaped centre crop
+  { box: [0.3, 0.25, 0.4, 0.5], invert: 'attemptBoth' }, // distant / small code
+];
+// 960 keeps enough detail for tiny codes without letting a single pass blow the frame budget.
+const QR_LIVE_MAX = 960;
+const QR_STILL_MAX = 1600;
+
+// Downscaling to a fixed working size keeps each jsQR pass well under one frame budget.
+function scanRegion(source, w, h, region, maxEdge) {
+  if (!w || !h) return null;
+  const [fx, fy, fw, fh] = region.box;
+  const sx = w * fx, sy = h * fy, sw = w * fw, sh = h * fh;
+  const scale = Math.min(1, maxEdge / Math.max(sw, sh));
+  qrCanvas.width = Math.max(1, Math.round(sw * scale));
+  qrCanvas.height = Math.max(1, Math.round(sh * scale));
+  qrCtx.drawImage(source, sx, sy, sw, sh, 0, 0, qrCanvas.width, qrCanvas.height);
+  const img = qrCtx.getImageData(0, 0, qrCanvas.width, qrCanvas.height);
+  const hit = window.jsQR(img.data, img.width, img.height, { inversionAttempts: region.invert });
+  return hit && hit.data ? hit.data : null;
+}
+
+// Scan every region in a single tick — jsQR on a 960px working canvas takes only
+// a few ms per region, and covering all crops per tick is what makes a small
+// or off-centre code decode within the first second the user holds still.
+function scanAllRegions() {
+  const w = qrVideo.videoWidth, h = qrVideo.videoHeight;
+  for (const region of QR_REGIONS) {
+    const value = scanRegion(qrVideo, w, h, region, QR_LIVE_MAX);
+    if (value) return value;
+  }
+  return null;
+}
+
+// Native BarcodeDetector is fast and accurate for well-lit, well-framed codes,
+// but silently misses small / angled ones. Falling through to jsQR on the same
+// tick catches those without a second frame delay.
+async function getQrDecoder() {
+  if (qrDetector) return qrDetector;
+
+  let native = null;
+  if ('BarcodeDetector' in window) {
+    try {
+      const supported = await window.BarcodeDetector.getSupportedFormats();
+      if (supported.includes('qr_code')) native = new window.BarcodeDetector({ formats: ['qr_code'] });
+    } catch { /* fall through to jsQR */ }
+  }
+
+  // Load jsQR up-front so it's ready as a same-tick fallback for native misses.
+  let jsqrReady = true;
+  try { await loadJsQr(); } catch (err) {
+    jsqrReady = false;
+    if (!native) throw err; // no native + no jsQR = no way to decode
+  }
+
+  qrDetector = async () => {
+    if (native) {
+      try {
+        const codes = await native.detect(qrVideo);
+        if (codes.length && codes[0].rawValue) return codes[0].rawValue;
+      } catch { /* fall through to jsQR */ }
+    }
+    if (jsqrReady && window.jsQR) return scanAllRegions();
+    return null;
+  };
+  return qrDetector;
+}
+
+function stopCamera() {
+  if (qrTimer) { clearInterval(qrTimer); qrTimer = null; }
+  if (qrStream) { qrStream.getTracks().forEach((t) => t.stop()); qrStream = null; }
+  qrVideo.srcObject = null;
+  qrScanBtn.textContent = 'Scan QR';
+  qrScanner.classList.remove('scanning');
+}
+function closeQrScan() {
+  stopCamera();
+  qrScanner.classList.remove('on', 'done', 'hit');
+  qrStatus.textContent = '';
+}
+
+function qrFail(message) {
+  stopCamera();
+  qrScanner.classList.add('done');
+  qrScanner.classList.remove('hit');
+  qrStatus.textContent = message;
+}
+
+async function startQrScan() {
+  qrScanner.classList.add('on');
+  qrScanner.classList.remove('done', 'hit');
+  qrStatus.textContent = 'Starting camera…';
+
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    qrFail(window.isSecureContext
+      ? 'This browser has no camera API — paste the link instead.'
+      : 'Camera access needs a secure (https) address — paste the link instead.');
+    return;
+  }
+
+  // A high-resolution frame is what makes a small code on a phone screen decodable.
+  const videoWanted = {
+    facingMode: { ideal: 'environment' },
+    width: { ideal: 1920 },
+    height: { ideal: 1080 },
+    advanced: [{ focusMode: 'continuous' }],
+  };
+  try {
+    qrStream = await navigator.mediaDevices.getUserMedia({ video: videoWanted });
+  } catch {
+    try {
+      qrStream = await navigator.mediaDevices.getUserMedia({ video: true });
+    } catch {
+      qrFail('Camera access was blocked — allow it in the browser, or paste the link instead.');
+      return;
+    }
+  }
+
+  let decode;
+  try {
+    decode = await getQrDecoder();
+  } catch {
+    qrFail('The QR decoder could not load — check your connection, or paste the link instead.');
+    return;
+  }
+
+  qrVideo.srcObject = qrStream;
+  try { await qrVideo.play(); } catch { /* autoplay policies still allow frame capture */ }
+  qrScanBtn.textContent = 'Stop';
+
+  const ready = await new Promise((resolve) => {
+    const started = Date.now();
+    const check = setInterval(() => {
+      if (qrVideo.videoWidth && qrVideo.readyState >= 2) { clearInterval(check); resolve(true); }
+      else if (Date.now() - started > 6000) { clearInterval(check); resolve(false); }
+    }, 100);
+  });
+  if (!qrStream) return;
+  if (!ready) {
+    qrFail('The camera did not deliver any video — close other apps using it, then try again.');
+    return;
+  }
+
+  const res = qrVideo.videoWidth + '×' + qrVideo.videoHeight;
+  qrStatus.textContent = 'Scanning at ' + res + ' — point the camera at the code and hold steady.';
+  qrScanner.classList.add('scanning');
+
+  let busy = false;
+  let ticks = 0;
+  qrTimer = setInterval(async () => {
+    if (busy || !qrStream) return;
+    busy = true;
+    try {
+      const value = await decode();
+      ticks += 1;
+      if (value) {
+        qrFound(value);
+        return;
+      }
+      if (ticks === 30) {
+        qrStatus.textContent = 'Still looking at ' + res +
+          ' — move closer so the code fills the white box, or use “Upload QR photo”.';
+      }
+    } catch { /* a dropped frame is not fatal; the next tick retries */ }
+    finally { busy = false; }
+  }, 150);
+}
+
+function qrFound(value) {
+  document.getElementById('tfPortfolio').value = value;
+  stopCamera();
+  qrScanner.classList.add('on', 'done', 'hit');
+  qrStatus.textContent = 'Captured: ' + value;
+  // Short buzz confirms the capture on phones that support it; silently ignored elsewhere.
+  if (navigator.vibrate) { try { navigator.vibrate(60); } catch { /* not fatal */ } }
+}
+
+/* ---- Still-photo fallback: one-shot decode at higher resolution ---- */
+document.getElementById('qrPhoto').addEventListener('change', async (e) => {
+  const file = e.target.files && e.target.files[0];
+  e.target.value = '';
+  if (!file) return;
+  qrScanner.classList.add('on', 'done');
+  qrStatus.textContent = 'Reading image…';
+  try {
+    await loadJsQr();
+  } catch {
+    qrStatus.textContent = 'The QR decoder could not load — check your connection, or paste the link instead.';
+    return;
+  }
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((resolve, reject) => {
+      const im = new Image();
+      im.onload = () => resolve(im);
+      im.onerror = () => reject(new Error('decode failed'));
+      im.src = url;
+    });
+    for (const region of QR_REGIONS) {
+      const value = scanRegion(img, img.naturalWidth, img.naturalHeight, region, QR_STILL_MAX);
+      if (value) { qrFound(value); return; }
+    }
+    qrStatus.textContent = 'No QR code found in that image — crop tighter around the code and try again.';
+  } catch {
+    qrStatus.textContent = 'That image could not be read — try a JPG or PNG.';
+  } finally {
+    URL.revokeObjectURL(url);
+  }
+});
+
+profileToggle.addEventListener('click', () => {
+  const open = profilePanel.classList.toggle('open');
+  profileToggle.setAttribute('aria-expanded', String(open));
+  if (!open) closeQrScan();
+});
+
+qrScanBtn.addEventListener('click', () => (qrStream ? closeQrScan() : startQrScan()));
+
+/* ============================================================
+   Dashboard charts
+   ============================================================ */
+const MP_RED = '#E30613';
+const MP_DARK = '#1F1F1F';
+const MP_GRAY = '#C9C9C9';
+
+Chart.defaults.font.family = '"Inter", "Segoe UI", system-ui, sans-serif';
+Chart.defaults.color = '#5C5C5C';
+Chart.defaults.borderColor = '#ECECEC';
+
+function ensureChart(id, cfg) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  pendingCharts.push({ el, cfg });
+  drawVisibleCharts();
+}
+
+// Chart.js measures the canvas, so a chart in a hidden pane must wait for its pane.
+const pendingCharts = [];
+function drawVisibleCharts() {
+  for (let i = pendingCharts.length - 1; i >= 0; i--) {
+    const { el, cfg } = pendingCharts[i];
+    if (el.offsetParent === null) continue;
+    pendingCharts.splice(i, 1);
+    new Chart(el, cfg);
+  }
+}
+onPaneShown(drawVisibleCharts);
+
+ensureChart('chartRevenue', {
+  type: 'line',
+  data: {
+    labels: ['Summer','Autumn','Winter','Spring','Back to Campus','Heritage','Black Friday','Festive','Graduation'],
+    datasets: [{
+      label: 'Revenue (R m)',
+      data: [268.8, 202.0, 269.1, 189.0, 115.9, 311.3, 131.5, 135.9, 83.8],
+      borderColor: MP_RED,
+      backgroundColor: 'rgba(227,6,19,0.12)',
+      fill: true,
+      tension: .35,
+      pointBackgroundColor: MP_RED,
+      pointRadius: 3,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display:false } },
+    scales: {
+      y: { grid: { color: '#f0f0f0' }, ticks: { callback: (v)=> 'R ' + v + 'm' } },
+      x: { grid: { display:false } }
+    }
+  }
+});
+
+ensureChart('chartSentiment', {
+  type: 'doughnut',
+  data: {
+    labels: ['Positive','Neutral','Negative'],
+    datasets: [{
+      data: [52.3, 22.0, 25.7],
+      backgroundColor: [MP_RED, MP_DARK, MP_GRAY],
+      borderColor: '#fff', borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, cutout: '62%',
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+
+ensureChart('chartCampaigns', {
+  type: 'bar',
+  data: {
+    labels: ['Active Street Drop','Festival Fits','Sustainable Denim','Campus Sneaker','Coastal Linen','Denim Revival'],
+    datasets: [{
+      label: 'Engagement rate (%)',
+      data: [14.5, 14.5, 14.4, 14.4, 14.3, 14.1],
+      backgroundColor: MP_RED,
+      borderRadius: 6,
+      barPercentage: .6,
+      categoryPercentage: .7
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display:false } },
+    scales: {
+      y: { grid: { color: '#f0f0f0' }, ticks: { callback: (v)=> v + '%' } },
+      x: { grid: { display:false } }
+    }
+  }
+});
+
+/* ============================================================
+  Chat widget talks to /api/chat on the same origin.
+   Requires the Node proxy in retailai-site/server/ to be running.
+   ============================================================ */
+(() => {
+  const AGENT_LABELS = {
+    concierge: 'RetailAI Concierge',
+    campaign:  'Campaign Intelligence Agent',
+    sentiment: 'Sentiment & Market Intelligence',
+    analytics: 'Performance Agent',
+    portfolio: 'Creative Portfolio Intelligence',
+  };
+  const AGENT_GREETINGS = {
+    concierge: "Hi, I'm the RetailAI Concierge. Ask about campaigns, customers, analytics, or creative talent.",
+    campaign:  "Campaign Intelligence here. Give me an objective and I'll draft a concept, audience and brief.",
+    sentiment: "Voice of the customer. Ask what shoppers are saying, or which trends are heating up.",
+    analytics: "Performance Agent here. Ask about ROI, KPIs, or where to focus next.",
+    portfolio: "Portfolio Intelligence. Describe a brief and I'll surface the best creative talent.",
+  };
+
+  const fab       = document.getElementById('chatFab');
+  const panel     = document.getElementById('chatPanel');
+  const closeBtn  = document.getElementById('chatClose');
+  const body      = document.getElementById('chatBody');
+  const form      = document.getElementById('chatForm');
+  const input     = document.getElementById('chatInput');
+  const sendBtn   = document.getElementById('chatSend');
+  const agentBar  = document.querySelector('.chat-agent-bar');
+  const agentName = document.getElementById('chatAgentName');
+  const exportBtn = document.getElementById('chatExport');
+
+  // Per-agent thread state so switching agents preserves context per specialist.
+  const state = { agent: 'concierge', threads: {}, busy: false };
+  // Ordered record of the visible conversation, used for the whole-chat export.
+  const transcript = [];
+
+  function open(prefill) {
+    panel.classList.add('open');
+    setTimeout(() => input.focus(), 40);
+    if (prefill) {
+      input.value = prefill;
+    }
+  }
+  function close() { panel.classList.remove('open'); }
+
+  fab.addEventListener('click', () => (panel.classList.contains('open') ? close() : open()));
+  closeBtn.addEventListener('click', close);
+  exportBtn.addEventListener('click', () => downloadChatPdf(exportBtn));
+
+  // External buttons on the page can open the chat with a prefilled prompt and/or a specific agent.
+  document.querySelectorAll('[data-open-chat]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const wanted = btn.getAttribute('data-open-chat') || 'concierge';
+      switchAgent(wanted);
+      open(btn.getAttribute('data-prefill') || '');
+    });
+  });
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, (m) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+  }
+
+  function formatAgentText(text) {
+    return escapeHtml(text).split('\n').map((line) => {
+      const bullet = line.match(/^\s*-\s+(.+)$/);
+      if (bullet) return `&#8226; ${bullet[1]}`;
+
+      const label = line.match(/^([A-Z][A-Za-z0-9 ,/&()'-]{1,40}):\s*$/);
+      if (label) return `<span class="chat-heading">${label[1]}</span>`;
+
+      return line;
+    }).join('<br/>');
+  }
+
+  function answerFileName(agentLabel) {
+    const stamp = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
+    return `RetailAI-${agentLabel.replace(/[^A-Za-z0-9]+/g, '-')}-${stamp}`;
+  }
+
+  const VISUAL_COLOURS = [
+    '#E6202A', '#2563EB', '#0F8A4A', '#F59E0B', '#F5C518', '#7C3AED',
+    '#EC4899', '#0891B2', '#EA580C', '#4F46E5', '#65A30D', '#DB2777',
+    '#0D9488', '#9333EA', '#14B8A6', '#8B5CF6', '#84CC16', '#F97316',
+  ];
+
+  // Each chart gets its own shuffle so consecutive answers don't look identical.
+  function shuffledPalette() {
+    const pool = VISUAL_COLOURS.slice();
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+    return pool;
+  }
+
+  function tint(hex, alpha) {
+    const n = parseInt(hex.slice(1), 16);
+    return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`;
+  }
+
+  function buildChartConfig(visual) {
+    const palette = shuffledPalette();
+    const grid = { color: '#F0F0F0' };
+    const base = {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: visual.series.length > 1, position: 'bottom' } },
+    };
+
+    if (visual.type === 'pie' || visual.type === 'doughnut') {
+      return {
+        type: visual.type,
+        data: {
+          labels: visual.labels,
+          datasets: [{
+            data: visual.series[0].data,
+            backgroundColor: visual.labels.map((_, i) => palette[i % palette.length]),
+            borderColor: '#fff',
+            borderWidth: 2,
+          }],
+        },
+        options: { ...base, cutout: visual.type === 'doughnut' ? '60%' : undefined,
+          plugins: { legend: { display: true, position: 'bottom' } } },
+      };
+    }
+
+    if (visual.type === 'scatter') {
+      return {
+        type: 'scatter',
+        data: {
+          datasets: [{
+            label: visual.series[0].label,
+            data: visual.series[0].data,
+            backgroundColor: palette[0],
+          }],
+        },
+        options: { ...base, scales: { x: { grid }, y: { grid } } },
+      };
+    }
+
+    if (visual.type === 'radar') {
+      return {
+        type: 'radar',
+        data: {
+          labels: visual.labels,
+          datasets: visual.series.map((s, i) => ({
+            label: s.label,
+            data: s.data,
+            borderColor: palette[i % palette.length],
+            backgroundColor: tint(palette[i % palette.length], 0.15),
+            pointBackgroundColor: palette[i % palette.length],
+          })),
+        },
+        options: { ...base, plugins: { legend: { display: true, position: 'bottom' } } },
+      };
+    }
+
+    const isLine = visual.type === 'line' || visual.type === 'area';
+    const stacked = visual.type === 'stackedBar';
+    // A lone bar series would otherwise be one flat colour, so colour it per category.
+    const barPerCategory = !isLine && !stacked && visual.series.length === 1;
+
+    return {
+      type: isLine ? 'line' : 'bar',
+      data: {
+        labels: visual.labels,
+        datasets: visual.series.map((s, i) => {
+          const colour = palette[i % palette.length];
+          if (isLine) {
+            return {
+              label: s.label,
+              data: s.data,
+              borderColor: colour,
+              backgroundColor: tint(colour, 0.12),
+              fill: visual.type === 'area',
+              tension: .35,
+              pointRadius: 3,
+              pointBackgroundColor: colour,
+            };
+          }
+          return {
+            label: s.label,
+            data: s.data,
+            backgroundColor: barPerCategory
+              ? visual.labels.map((_, j) => palette[j % palette.length])
+              : colour,
+            borderRadius: 5,
+            maxBarThickness: 34,
+          };
+        }),
+      },
+      options: {
+        ...base,
+        indexAxis: visual.type === 'horizontalBar' ? 'y' : 'x',
+        scales: {
+          x: { stacked, grid: { display: false } },
+          y: { stacked, grid, beginAtZero: true },
+        },
+      },
+    };
+  }
+
+  function renderVisuals(wrap, visuals) {
+    visuals.forEach((visual) => {
+      const card = document.createElement('div');
+      card.className = 'chat-visual';
+
+      if (visual.title) {
+        const title = document.createElement('div');
+        title.className = 'chat-visual-title';
+        title.textContent = visual.title;
+        card.appendChild(title);
+      }
+
+      if (visual.kind === 'kpi') {
+        const grid = document.createElement('div');
+        grid.className = 'chat-kpis';
+        visual.items.forEach((item) => {
+          const cell = document.createElement('div');
+          cell.className = 'chat-kpi';
+          cell.innerHTML =
+            `<div class="chat-kpi-label">${escapeHtml(item.label)}</div>` +
+            `<div class="chat-kpi-value">${escapeHtml(item.value)}</div>` +
+            (item.note ? `<div class="chat-kpi-note">${escapeHtml(item.note)}</div>` : '');
+          grid.appendChild(cell);
+        });
+        card.appendChild(grid);
+      } else {
+        if (typeof Chart === 'undefined') return;
+        const holder = document.createElement('div');
+        holder.className = 'chat-visual-canvas';
+        const canvas = document.createElement('canvas');
+        holder.appendChild(canvas);
+        card.appendChild(holder);
+        // rAF never fires in a background tab, and Chart.js needs the holder measured first.
+        const draw = () => {
+          if (!canvas.isConnected) return;
+          if (!holder.clientWidth || !holder.clientHeight) { setTimeout(draw, 80); return; }
+          new Chart(canvas, buildChartConfig(visual));
+        };
+        setTimeout(draw, 0);
+      }
+
+      if (visual.insight) {
+        const insight = document.createElement('div');
+        insight.className = 'chat-visual-insight';
+        insight.textContent = visual.insight;
+        card.appendChild(insight);
+      }
+
+      wrap.appendChild(card);
+    });
+  }
+
+  function initials(name) {
+    return name.split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0].toUpperCase()).join('');
+  }
+
+  function renderCreatives(wrap, creatives) {
+    creatives.forEach((person) => {
+      const card = document.createElement('div');
+      card.className = 'chat-creative';
+
+      const avatar = document.createElement('div');
+      avatar.className = 'chat-creative-avatar';
+      if (person.imageUrl) {
+        const img = document.createElement('img');
+        img.src = person.imageUrl;
+        img.alt = `${person.name} headshot`;
+        img.referrerPolicy = 'no-referrer';
+        img.addEventListener('error', () => { avatar.textContent = initials(person.name); });
+        avatar.appendChild(img);
+      } else {
+        avatar.textContent = initials(person.name);
+      }
+
+      const meta = [person.category, person.location].filter(Boolean).join(' · ');
+      const chips = [
+        person.brandFit !== null ? `<span class="chat-chip">Brand fit ${person.brandFit}</span>` : '',
+        person.readiness !== null ? `<span class="chat-chip">Readiness ${person.readiness}</span>` : '',
+        person.rateBand ? `<span class="chat-chip neutral">${escapeHtml(person.rateBand)}</span>` : '',
+        person.availability ? `<span class="chat-chip neutral">${escapeHtml(person.availability)}</span>` : '',
+      ].join('');
+
+      const links = [
+        person.portfolioLink
+          ? `<a href="${escapeHtml(person.portfolioLink)}" target="_blank" rel="noopener noreferrer">View portfolio</a>`
+          : '',
+        person.handle ? `<span>${escapeHtml(person.handle)}</span>` : '',
+      ].join('');
+
+      const body = document.createElement('div');
+      body.className = 'chat-creative-body';
+      body.innerHTML =
+        `<div class="chat-creative-name">${escapeHtml(person.name)}</div>` +
+        (meta ? `<div class="chat-creative-meta">${escapeHtml(meta)}</div>` : '') +
+        (person.bio ? `<div class="chat-creative-bio">${escapeHtml(person.bio)}</div>` : '') +
+        (person.audience ? `<div class="chat-creative-detail"><strong>Audience:</strong> ${escapeHtml(person.audience)}</div>` : '') +
+        (person.experience ? `<div class="chat-creative-detail"><strong>Experience:</strong> ${escapeHtml(person.experience)}</div>` : '') +
+        (person.campaignFit ? `<div class="chat-creative-detail"><strong>Best fit:</strong> ${escapeHtml(person.campaignFit)}</div>` : '') +
+        (person.why ? `<div class="chat-creative-why">${escapeHtml(person.why)}</div>` : '') +
+        (chips ? `<div class="chat-creative-scores">${chips}</div>` : '') +
+        (links ? `<div class="chat-creative-links">${links}</div>` : '');
+
+      card.appendChild(avatar);
+      card.appendChild(body);
+      wrap.appendChild(card);
+    });
+  }
+
+  function answerAsPlainText(entry) {
+    const parts = [`RetailAI ${entry.agentLabel}`, entry.stamp];
+    if (entry.question) parts.push(`Question: ${entry.question}`);
+    parts.push(entry.answer);
+    return parts.join('\n\n');
+  }
+  const PDF_LIB_URL = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js';
+  const PDF_INK = {
+    red:    [230, 32, 42],
+    dark:   [31, 31, 31],
+    muted:  [92, 92, 92],
+    soft:   [122, 122, 122],
+    border: [228, 228, 228],
+  };
+  let pdfLibLoader = null;
+
+  function loadPdfLib() {
+    if (window.jspdf && window.jspdf.jsPDF) return Promise.resolve(window.jspdf.jsPDF);
+    if (!pdfLibLoader) {
+      pdfLibLoader = new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = PDF_LIB_URL;
+        script.onload = () => {
+          if (window.jspdf && window.jspdf.jsPDF) resolve(window.jspdf.jsPDF);
+          else { pdfLibLoader = null; reject(new Error('jsPDF unavailable')); }
+        };
+        script.onerror = () => { pdfLibLoader = null; reject(new Error('jsPDF failed to load')); };
+        document.head.appendChild(script);
+      });
+    }
+    return pdfLibLoader;
+  }
+
+  // Flowing-layout writer over jsPDF: each helper advances one shared cursor and
+  // breaks to a new page before it would spill past the bottom margin.
+  function pdfWriter(doc) {
+    const pageW = doc.internal.pageSize.getWidth();
+    const pageH = doc.internal.pageSize.getHeight();
+    const margin = 48;
+    const width = pageW - margin * 2;
+    let y = margin;
+
+    function ensure(height) {
+      if (y + height > pageH - margin) { doc.addPage(); y = margin; }
+    }
+
+    const api = {
+      width,
+      space(height) { y += height; },
+      text(value, opts) {
+        const o = opts || {};
+        const size = o.size || 11;
+        const color = o.color || PDF_INK.dark;
+        const indent = o.indent || 0;
+        const gap = o.gap === undefined ? 6 : o.gap;
+        doc.setFont('helvetica', o.style || 'normal');
+        doc.setFontSize(size);
+        doc.setTextColor(color[0], color[1], color[2]);
+        const lineHeight = size * 1.45;
+        doc.splitTextToSize(String(value), width - indent).forEach((line) => {
+          ensure(lineHeight);
+          doc.text(line, margin + indent, y + size);
+          y += lineHeight;
+        });
+        y += gap;
+      },
+      label(value) {
+        api.text(String(value).toUpperCase(), { size: 8.5, style: 'bold', color: PDF_INK.soft, gap: 3 });
+      },
+      rule(color, thickness, gap) {
+        const c = color || PDF_INK.border;
+        const t = thickness || 0.7;
+        const g = gap === undefined ? 12 : gap;
+        ensure(t + g);
+        doc.setDrawColor(c[0], c[1], c[2]);
+        doc.setLineWidth(t);
+        doc.line(margin, y, margin + width, y);
+        y += t + g;
+      },
+      brand() {
+        const lead = 'Mr Price ';
+        ensure(26);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(17);
+        doc.setTextColor(PDF_INK.dark[0], PDF_INK.dark[1], PDF_INK.dark[2]);
+        doc.text(lead, margin, y + 17);
+        doc.setTextColor(PDF_INK.red[0], PDF_INK.red[1], PDF_INK.red[2]);
+        doc.text('RetailAI', margin + doc.getTextWidth(lead), y + 17);
+        y += 26;
+      },
+      image(dataUrl, naturalW, naturalH, maxWidth) {
+        const w = Math.min(maxWidth || 430, width);
+        const h = naturalW && naturalH ? (naturalH / naturalW) * w : w * 0.55;
+        ensure(h + 12);
+        doc.addImage(dataUrl, 'PNG', margin, y, w, h);
+        y += h + 12;
+      },
+    };
+    return api;
+  }
+
+  function pdfImage(url) {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.referrerPolicy = 'no-referrer';
+      img.addEventListener('load', () => {
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = img.naturalWidth;
+          canvas.height = img.naturalHeight;
+          canvas.getContext('2d').drawImage(img, 0, 0);
+          resolve({ data: canvas.toDataURL('image/png'), w: canvas.width, h: canvas.height });
+        } catch (err) {
+          resolve(null); // cross-origin image tainted the canvas
+        }
+      });
+      img.addEventListener('error', () => resolve(null));
+      img.src = url.startsWith('/') ? location.origin + url : url;
+    });
+  }
+
+  function nodeVisuals(node) {
+    if (!node) return { charts: [], kpis: [] };
+    const charts = [...node.querySelectorAll('.chat-visual canvas')].map((canvas) => ({
+      data: canvas.toDataURL('image/png'), w: canvas.width, h: canvas.height,
+    }));
+    const kpis = [...node.querySelectorAll('.chat-kpi')].map((cell) => {
+      const pick = (sel) => (cell.querySelector(sel) ? cell.querySelector(sel).textContent : '');
+      return { label: pick('.chat-kpi-label'), value: pick('.chat-kpi-value'), note: pick('.chat-kpi-note') };
+    });
+    return { charts, kpis };
+  }
+
+  function writeAnswerBody(w, text) {
+    String(text).split('\n').forEach((line) => {
+      const raw = line.trim();
+      if (!raw) { w.space(4); return; }
+      const bullet = raw.match(/^[-*\u2022]\s+(.*)$/);
+      if (bullet) { w.text('\u2022  ' + bullet[1], { size: 10.5, gap: 2, indent: 10 }); return; }
+      const heading = raw.match(/^([A-Z][A-Za-z0-9 ,/&()'-]{1,44}):$/);
+      if (heading) { w.text(heading[1], { size: 11, style: 'bold', gap: 3 }); return; }
+      w.text(raw, { size: 10.5, gap: 3 });
+    });
+  }
+
+  async function writeExchange(w, entry, opts) {
+    const o = opts || {};
+    if (o.question !== false && entry.question) {
+      w.label('Question');
+      w.text(entry.question, { size: 11, style: 'bold', gap: 10 });
+    }
+
+    const visuals = nodeVisuals(entry.node);
+    if (visuals.kpis.length || visuals.charts.length) {
+      w.label('Visuals');
+      visuals.kpis.forEach((kpi) => {
+        const note = kpi.note ? ' \u2014 ' + kpi.note : '';
+        w.text(`${kpi.label}: ${kpi.value}${note}`, { size: 10, color: PDF_INK.muted, gap: 2 });
+      });
+      if (visuals.kpis.length) w.space(6);
+      visuals.charts.forEach((chart) => w.image(chart.data, chart.w, chart.h));
+    }
+
+    const people = entry.creatives || [];
+    if (people.length) {
+      w.label('Recommended creatives');
+      for (const person of people) {
+        const photo = person.imageUrl ? await pdfImage(person.imageUrl) : null;
+        if (photo) w.image(photo.data, photo.w, photo.h, 64);
+        w.text(person.name, { size: 11, style: 'bold', gap: 2 });
+        const meta = [person.category, person.location].filter(Boolean).join(' \u00b7 ');
+        if (meta) w.text(meta, { size: 9.5, color: PDF_INK.muted, gap: 2 });
+        if (person.why) w.text(person.why, { size: 10, gap: 2 });
+        const scores = [
+          person.brandFit === null || person.brandFit === undefined ? '' : `Brand fit ${person.brandFit}`,
+          person.readiness === null || person.readiness === undefined ? '' : `Readiness ${person.readiness}`,
+          person.rateBand,
+          person.availability,
+          person.handle,
+        ].filter(Boolean).join(' \u00b7 ');
+        if (scores) w.text(scores, { size: 9.5, color: PDF_INK.muted, gap: 2 });
+        if (person.portfolioLink) w.text(person.portfolioLink, { size: 9.5, color: PDF_INK.red, gap: 2 });
+        w.space(6);
+      }
+    }
+
+    if (o.answerLabel !== null) w.label(o.answerLabel || 'Answer');
+    writeAnswerBody(w, entry.answer);
+  }
+
+  function pdfFooterNote(w) {
+    w.space(8);
+    w.rule();
+    w.text("Generated by RetailAI. Figures are drawn from the agent's assigned Mr Price datasets.",
+      { size: 8.5, color: PDF_INK.soft, gap: 0 });
+  }
+
+  function busyLabel(btn, label) {
+    if (!btn) return () => {};
+    const original = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = label;
+    return () => { btn.disabled = false; btn.textContent = original; };
+  }
+
+  function stampNow() {
+    return new Date().toLocaleString('en-ZA', { dateStyle: 'medium', timeStyle: 'short' });
+  }
+
+  async function downloadPdf(entry, btn) {
+    const restore = busyLabel(btn, 'Building PDF…');
+    try {
+      const JsPdf = await loadPdfLib();
+      const doc = new JsPdf({ unit: 'pt', format: 'a4' });
+      const w = pdfWriter(doc);
+      w.brand();
+      w.text(`${entry.agentLabel}  |  ${entry.stamp}`, { size: 9.5, color: PDF_INK.muted, gap: 6 });
+      w.rule(PDF_INK.red, 2);
+      await writeExchange(w, entry);
+      pdfFooterNote(w);
+      doc.save(answerFileName(entry.agentLabel) + '.pdf');
+    } catch (err) {
+      addMsg('sys', 'The PDF builder could not load. Check your connection and try again.');
+      // eslint-disable-next-line no-console
+      console.error(err);
+    } finally {
+      restore();
+    }
+  }
+
+  async function downloadChatPdf(btn) {
+    if (!transcript.some((item) => item.role === 'user')) {
+      addMsg('sys', 'There is nothing to export yet — ask the agent a question first.');
+      return;
+    }
+    const restore = busyLabel(btn, 'Building PDF…');
+    try {
+      const JsPdf = await loadPdfLib();
+      const doc = new JsPdf({ unit: 'pt', format: 'a4' });
+      const w = pdfWriter(doc);
+      const stamp = stampNow();
+      w.brand();
+      w.text(`Chat transcript  |  ${AGENT_LABELS[state.agent] || 'RetailAI'}  |  ${stamp}`,
+        { size: 9.5, color: PDF_INK.muted, gap: 6 });
+      w.rule(PDF_INK.red, 2);
+
+      for (let i = 0; i < transcript.length; i += 1) {
+        const item = transcript[i];
+        if (i) w.rule();
+        if (item.role === 'user') {
+          w.label('You');
+          w.text(item.text, { size: 10.5, style: 'bold', gap: 4 });
+        } else {
+          await writeExchange(w, item, { question: false, answerLabel: item.agentLabel });
+        }
+      }
+
+      pdfFooterNote(w);
+      doc.save(answerFileName(`Chat-${AGENT_LABELS[state.agent] || 'RetailAI'}`) + '.pdf');
+    } catch (err) {
+      addMsg('sys', 'The PDF builder could not load. Check your connection and try again.');
+      // eslint-disable-next-line no-console
+      console.error(err);
+    } finally {
+      restore();
+    }
+  }
+
+  async function shareAnswer(entry, btn) {
+    const text = answerAsPlainText(entry);
+    const flash = (label) => {
+      const original = btn.textContent;
+      btn.textContent = label;
+      setTimeout(() => { btn.textContent = original; }, 1600);
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: `RetailAI ${entry.agentLabel}`, text });
+        return;
+      } catch (err) {
+        if (err && err.name === 'AbortError') return;
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(text);
+      flash('Copied');
+    } catch (err) {
+      flash('Copy failed');
+      // eslint-disable-next-line no-console
+      console.error(err);
+    }
+  }
+
+  function addAnswerActions(wrap, entry) {
+    const actions = document.createElement('div');
+    actions.className = 'chat-actions';
+
+    const pdfBtn = document.createElement('button');
+    pdfBtn.type = 'button';
+    pdfBtn.textContent = 'Download PDF';
+    pdfBtn.addEventListener('click', () => downloadPdf(entry, pdfBtn));
+
+    const shareBtn = document.createElement('button');
+    shareBtn.type = 'button';
+    shareBtn.textContent = 'Share';
+    shareBtn.addEventListener('click', () => shareAnswer(entry, shareBtn));
+
+    actions.appendChild(pdfBtn);
+    actions.appendChild(shareBtn);
+    wrap.appendChild(actions);
+  }
+
+  function addMsg(role, text, meta) {
+    const wrap = document.createElement('div');
+    wrap.className = 'msg ' + role;
+
+    if (role === 'ai' && meta && meta.visuals && meta.visuals.length) {
+      renderVisuals(wrap, meta.visuals);
+    }
+
+    if (role === 'ai' && meta && meta.creatives && meta.creatives.length) {
+      renderCreatives(wrap, meta.creatives);
+    }
+
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    bubble.innerHTML = role === 'ai'
+      ? formatAgentText(text)
+      : escapeHtml(text).replace(/\n/g, '<br/>');
+    wrap.appendChild(bubble);
+
+    if (role === 'ai' && meta && meta.exportable) {
+      addAnswerActions(wrap, {
+        agentLabel: AGENT_LABELS[state.agent] || 'RetailAI',
+        question: meta.question || '',
+        answer: text,
+        node: wrap,
+        creatives: meta.creatives || [],
+        stamp: stampNow(),
+      });
+    }
+
+    if (role === 'user' || role === 'ai') {
+      transcript.push({
+        role,
+        text,
+        answer: text,
+        node: wrap,
+        agentLabel: AGENT_LABELS[state.agent] || 'RetailAI',
+        creatives: (meta && meta.creatives) || [],
+      });
+    }
+
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return wrap;
+  }
+
+  function addTyping() {
+    const wrap = document.createElement('div');
+    wrap.className = 'msg ai';
+    wrap.innerHTML = '<div class="typing"><span></span><span></span><span></span></div>';
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+    return wrap;
+  }
+
+  function resetGreeting() {
+    body.innerHTML = '';
+    transcript.length = 0;
+    addMsg('ai', AGENT_GREETINGS[state.agent] || AGENT_GREETINGS.concierge);
+  }
+
+  function switchAgent(agent) {
+    if (!AGENT_LABELS[agent] || agent === state.agent) {
+      // still update UI in case caller passed same agent
+      agentBar.querySelectorAll('button').forEach((b) => {
+        b.classList.toggle('active', b.dataset.agent === agent);
+      });
+      return;
+    }
+    state.agent = agent;
+    agentName.textContent = AGENT_LABELS[agent];
+    agentBar.querySelectorAll('button').forEach((b) => {
+      b.classList.toggle('active', b.dataset.agent === agent);
+    });
+    resetGreeting();
+  }
+
+  agentBar.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-agent]');
+    if (!btn) return;
+    switchAgent(btn.dataset.agent);
+  });
+
+  async function send(message) {
+    if (state.busy) return;
+    if (!message || !message.trim()) return;
+    state.busy = true;
+    sendBtn.disabled = true;
+
+    addMsg('user', message);
+    const typing = addTyping();
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          agent: state.agent,
+          message,
+          threadId: state.threads[state.agent] || undefined,
+        }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+      typing.remove();
+
+      if (!res.ok) {
+        const detail = data && data.error ? data.error : ('HTTP ' + res.status);
+        const extra = data && data.detail
+          ? '\n\n' + (typeof data.detail === 'string' ? data.detail : JSON.stringify(data.detail, null, 2))
+          : '';
+        addMsg('err', 'Sorry, the agent call failed.\n' + detail + extra);
+        return;
+      }
+
+      if (data.threadId) state.threads[state.agent] = data.threadId;
+      addMsg('ai', data.reply || '(no reply)', {
+        exportable: true,
+        question: message,
+        visuals: Array.isArray(data.visuals) ? data.visuals : [],
+        creatives: Array.isArray(data.creatives) ? data.creatives : [],
+      });
+    } catch (err) {
+      typing.remove();
+      addMsg('err',
+        "Couldn't reach the RetailAI server. Make sure the proxy is running: " +
+        "cd retailai-site/server && npm start");
+      // eslint-disable-next-line no-console
+      console.error(err);
+    } finally {
+      state.busy = false;
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = input.value.trim();
+    if (!v) return;
+    input.value = '';
+    send(v);
+  });
+})();
+</script>
+
+</body>
+</html>

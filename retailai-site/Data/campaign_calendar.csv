@@ -1,0 +1,121 @@
+campaign_id,campaign_name,season,launch_date,end_date,planning_status,owner_team,key_milestone
+CAMP-0001,Denim Revival 001,Autumn,2027-03-19,2027-04-04,Brief drafted,Creative Studio,sentiment review
+CAMP-0002,Active Street Drop 002,Graduation/Occasionwear,2026-08-30,2026-10-02,Idea,CRM,sentiment review
+CAMP-0003,Coastal Summer Linen 003,Heritage Month,2027-03-04,2027-04-01,In approval,Digital,brief sign-off
+CAMP-0004,Denim Revival 004,Heritage Month,2026-10-23,2026-11-09,Live,Creative Studio,creator shortlist
+CAMP-0005,Denim Revival 005,Heritage Month,2026-12-28,2027-01-25,Creator sourcing,Merchandising,brief sign-off
+CAMP-0006,Denim Revival 006,Summer,2026-08-22,2026-10-03,Completed,Creative Studio,brief sign-off
+CAMP-0007,Festival Fits 007,Back to Campus,2027-04-07,2027-05-16,Brief drafted,CRM,content shoot
+CAMP-0008,Street Utility Edit 008,Winter,2027-01-02,2027-01-19,Completed,Digital,homepage launch
+CAMP-0009,Heritage Style Drop 009,Spring,2026-09-07,2026-10-18,Creator sourcing,CRM,content shoot
+CAMP-0010,Denim Revival 010,Spring,2026-08-04,2026-09-05,Creator sourcing,Digital,content shoot
+CAMP-0011,Street Utility Edit 011,Spring,2027-04-08,2027-05-20,Live,Marketing,creator shortlist
+CAMP-0012,Denim Revival 012,Spring,2027-02-03,2027-03-17,Completed,CRM,homepage launch
+CAMP-0013,Street Utility Edit 013,Heritage Month,2026-10-13,2026-11-06,Completed,CRM,ROI readout
+CAMP-0014,Heritage Style Drop 014,Back to Campus,2027-03-18,2027-04-27,Brief drafted,Brand,sentiment review
+CAMP-0015,Festival Fits 015,Graduation/Occasionwear,2026-08-23,2026-09-15,Brief drafted,Digital,homepage launch
+CAMP-0016,Coastal Summer Linen 016,Autumn,2027-03-11,2027-04-15,Idea,Brand,homepage launch
+CAMP-0017,Back to Campus Fits 017,Summer,2026-08-23,2026-09-06,In approval,Creative Studio,content shoot
+CAMP-0018,Heritage Style Drop 018,Summer,2026-11-15,2026-12-10,Live,CRM,ROI readout
+CAMP-0019,Festival Fits 019,Black Friday,2026-12-24,2027-01-15,Brief drafted,Merchandising,homepage launch
+CAMP-0020,Campus Sneaker Culture 020,Winter,2026-10-14,2026-11-28,Idea,Digital,sentiment review
+CAMP-0021,Heritage Style Drop 021,Winter,2026-10-17,2026-12-01,Live,Creative Studio,homepage launch
+CAMP-0022,Denim Revival 022,Back to Campus,2026-09-27,2026-10-12,Idea,Merchandising,content shoot
+CAMP-0023,Street Utility Edit 023,Winter,2026-10-16,2026-11-29,Idea,Creative Studio,ROI readout
+CAMP-0024,Denim Revival 024,Autumn,2027-03-17,2027-04-18,In approval,Merchandising,homepage launch
+CAMP-0025,Denim Revival 025,Autumn,2027-03-21,2027-04-19,Idea,Marketing,content shoot
+CAMP-0026,Denim Revival 026,Heritage Month,2026-12-05,2026-12-23,Live,Creative Studio,content shoot
+CAMP-0027,Active Street Drop 027,Autumn,2026-12-27,2027-02-09,Live,CRM,content shoot
+CAMP-0028,Active Street Drop 028,Graduation/Occasionwear,2027-01-08,2027-02-21,Completed,Marketing,content shoot
+CAMP-0029,Festival Fits 029,Black Friday,2026-12-10,2026-12-25,Creator sourcing,Merchandising,sentiment review
+CAMP-0030,Coastal Summer Linen 030,Autumn,2026-08-15,2026-09-07,Creator sourcing,CRM,ROI readout
+CAMP-0031,Back to Campus Fits 031,Back to Campus,2026-09-04,2026-10-10,Brief drafted,Marketing,content shoot
+CAMP-0032,Street Utility Edit 032,Spring,2026-11-01,2026-12-11,Completed,Digital,brief sign-off
+CAMP-0033,Festival Fits 033,Winter,2026-10-14,2026-11-15,Live,Creative Studio,brief sign-off
+CAMP-0034,Festival Fits 034,Heritage Month,2026-12-10,2027-01-05,Completed,Merchandising,brief sign-off
+CAMP-0035,Heritage Style Drop 035,Holiday/Festive,2027-01-01,2027-01-25,Live,Digital,content shoot
+CAMP-0036,Heritage Style Drop 036,Autumn,2027-02-28,2027-04-02,Creator sourcing,Creative Studio,ROI readout
+CAMP-0037,Quiet Luxury Basics 037,Winter,2027-01-24,2027-03-02,Idea,Brand,sentiment review
+CAMP-0038,Quiet Luxury Basics 038,Spring,2026-10-30,2026-11-22,Idea,Merchandising,sentiment review
+CAMP-0039,Heritage Style Drop 039,Winter,2026-10-12,2026-11-18,In approval,CRM,content shoot
+CAMP-0040,Quiet Luxury Basics 040,Winter,2027-03-24,2027-04-17,Idea,Merchandising,creator shortlist
+CAMP-0041,Campus Sneaker Culture 041,Black Friday,2026-12-07,2027-01-04,Brief drafted,Brand,sentiment review
+CAMP-0042,Street Utility Edit 042,Holiday/Festive,2027-01-24,2027-02-14,In approval,CRM,brief sign-off
+CAMP-0043,Back to Campus Fits 043,Autumn,2026-08-30,2026-09-21,Idea,CRM,content shoot
+CAMP-0044,Active Street Drop 044,Back to Campus,2026-10-19,2026-11-25,Brief drafted,CRM,sentiment review
+CAMP-0045,Street Utility Edit 045,Autumn,2026-12-12,2027-01-16,Brief drafted,Creative Studio,content shoot
+CAMP-0046,Heritage Style Drop 046,Heritage Month,2026-08-08,2026-08-29,Brief drafted,Merchandising,ROI readout
+CAMP-0047,Back to Campus Fits 047,Heritage Month,2026-09-06,2026-10-04,Creator sourcing,Merchandising,creator shortlist
+CAMP-0048,Street Utility Edit 048,Spring,2026-09-03,2026-09-22,In approval,Creative Studio,brief sign-off
+CAMP-0049,Active Street Drop 049,Graduation/Occasionwear,2026-08-20,2026-09-04,In approval,CRM,brief sign-off
+CAMP-0050,Denim Revival 050,Summer,2026-09-20,2026-10-10,Idea,Creative Studio,sentiment review
+CAMP-0051,Heritage Style Drop 051,Winter,2026-12-30,2027-01-16,In approval,Marketing,content shoot
+CAMP-0052,Quiet Luxury Basics 052,Graduation/Occasionwear,2026-08-12,2026-08-30,Creator sourcing,Creative Studio,brief sign-off
+CAMP-0053,Coastal Summer Linen 053,Winter,2027-02-10,2027-03-02,Idea,Brand,creator shortlist
+CAMP-0054,Festival Fits 054,Spring,2026-12-29,2027-01-24,Brief drafted,Creative Studio,content shoot
+CAMP-0055,Active Street Drop 055,Autumn,2026-08-08,2026-08-27,Brief drafted,Creative Studio,content shoot
+CAMP-0056,Sustainable Denim Capsule 056,Spring,2027-03-31,2027-05-06,Creator sourcing,Merchandising,sentiment review
+CAMP-0057,Denim Revival 057,Heritage Month,2027-02-16,2027-03-17,Live,Brand,brief sign-off
+CAMP-0058,Denim Revival 058,Autumn,2026-08-26,2026-09-09,Live,Merchandising,ROI readout
+CAMP-0059,Heritage Style Drop 059,Holiday/Festive,2026-09-19,2026-10-21,Brief drafted,Brand,brief sign-off
+CAMP-0060,Denim Revival 060,Spring,2027-04-07,2027-04-27,Brief drafted,Brand,ROI readout
+CAMP-0061,Sustainable Denim Capsule 061,Heritage Month,2026-11-30,2027-01-06,Completed,Brand,creator shortlist
+CAMP-0062,Sustainable Denim Capsule 062,Back to Campus,2026-11-21,2026-12-11,Brief drafted,Digital,homepage launch
+CAMP-0063,Heritage Style Drop 063,Winter,2026-11-17,2026-12-14,Live,Merchandising,homepage launch
+CAMP-0064,Active Street Drop 064,Summer,2026-08-29,2026-10-02,Idea,CRM,brief sign-off
+CAMP-0065,Quiet Luxury Basics 065,Graduation/Occasionwear,2026-12-12,2027-01-03,In approval,Digital,ROI readout
+CAMP-0066,Back to Campus Fits 066,Black Friday,2026-10-13,2026-10-29,Idea,Digital,homepage launch
+CAMP-0067,Back to Campus Fits 067,Spring,2026-08-30,2026-10-07,Creator sourcing,CRM,sentiment review
+CAMP-0068,Denim Revival 068,Back to Campus,2027-02-05,2027-03-10,Completed,CRM,creator shortlist
+CAMP-0069,Campus Sneaker Culture 069,Summer,2026-12-20,2027-01-29,Creator sourcing,CRM,creator shortlist
+CAMP-0070,Street Utility Edit 070,Black Friday,2027-03-08,2027-03-26,In approval,Creative Studio,content shoot
+CAMP-0071,Festival Fits 071,Spring,2026-09-15,2026-09-29,Completed,CRM,ROI readout
+CAMP-0072,Coastal Summer Linen 072,Holiday/Festive,2026-08-27,2026-10-05,In approval,Brand,ROI readout
+CAMP-0073,Campus Sneaker Culture 073,Black Friday,2027-01-21,2027-02-09,Idea,Merchandising,homepage launch
+CAMP-0074,Campus Sneaker Culture 074,Back to Campus,2026-11-11,2026-12-01,Completed,Merchandising,brief sign-off
+CAMP-0075,Active Street Drop 075,Holiday/Festive,2026-11-02,2026-11-28,Creator sourcing,Merchandising,sentiment review
+CAMP-0076,Quiet Luxury Basics 076,Back to Campus,2027-03-05,2027-04-13,Idea,Merchandising,homepage launch
+CAMP-0077,Back to Campus Fits 077,Spring,2027-02-02,2027-03-19,Creator sourcing,Creative Studio,sentiment review
+CAMP-0078,Street Utility Edit 078,Heritage Month,2026-12-30,2027-01-30,Completed,CRM,content shoot
+CAMP-0079,Quiet Luxury Basics 079,Summer,2026-11-30,2027-01-08,In approval,Brand,content shoot
+CAMP-0080,Back to Campus Fits 080,Summer,2026-09-07,2026-10-20,Idea,Marketing,content shoot
+CAMP-0081,Street Utility Edit 081,Spring,2026-12-04,2027-01-18,Brief drafted,Creative Studio,creator shortlist
+CAMP-0082,Denim Revival 082,Back to Campus,2026-08-08,2026-08-28,Completed,Marketing,brief sign-off
+CAMP-0083,Festival Fits 083,Summer,2026-12-06,2026-12-21,Brief drafted,CRM,sentiment review
+CAMP-0084,Coastal Summer Linen 084,Winter,2027-01-21,2027-02-24,Brief drafted,Digital,sentiment review
+CAMP-0085,Coastal Summer Linen 085,Graduation/Occasionwear,2027-01-07,2027-01-27,Idea,Creative Studio,sentiment review
+CAMP-0086,Denim Revival 086,Holiday/Festive,2027-02-13,2027-03-30,In approval,Merchandising,content shoot
+CAMP-0087,Coastal Summer Linen 087,Summer,2027-01-17,2027-03-03,In approval,Brand,content shoot
+CAMP-0088,Festival Fits 088,Summer,2026-12-17,2027-01-21,Live,Brand,brief sign-off
+CAMP-0089,Campus Sneaker Culture 089,Black Friday,2027-04-01,2027-04-17,In approval,Marketing,homepage launch
+CAMP-0090,Back to Campus Fits 090,Winter,2026-11-24,2026-12-28,In approval,CRM,homepage launch
+CAMP-0091,Festival Fits 091,Autumn,2026-08-10,2026-08-26,Brief drafted,Brand,ROI readout
+CAMP-0092,Heritage Style Drop 092,Heritage Month,2027-03-09,2027-04-11,Completed,Merchandising,homepage launch
+CAMP-0093,Quiet Luxury Basics 093,Autumn,2026-11-19,2026-12-11,Creator sourcing,Creative Studio,homepage launch
+CAMP-0094,Coastal Summer Linen 094,Autumn,2026-12-03,2026-12-24,Live,Creative Studio,homepage launch
+CAMP-0095,Festival Fits 095,Summer,2027-01-16,2027-03-01,In approval,Brand,creator shortlist
+CAMP-0096,Back to Campus Fits 096,Holiday/Festive,2026-12-08,2026-12-25,In approval,Digital,homepage launch
+CAMP-0097,Denim Revival 097,Spring,2026-12-30,2027-02-06,Live,Creative Studio,content shoot
+CAMP-0098,Active Street Drop 098,Graduation/Occasionwear,2027-02-13,2027-03-17,Creator sourcing,Marketing,brief sign-off
+CAMP-0099,Festival Fits 099,Holiday/Festive,2026-12-30,2027-01-15,Brief drafted,Digital,content shoot
+CAMP-0100,Active Street Drop 100,Holiday/Festive,2027-02-24,2027-03-11,Completed,Digital,homepage launch
+CAMP-0101,Campus Sneaker Culture 101,Holiday/Festive,2026-08-25,2026-10-05,Creator sourcing,Digital,homepage launch
+CAMP-0102,Campus Sneaker Culture 102,Autumn,2026-10-29,2026-11-15,Completed,Merchandising,creator shortlist
+CAMP-0103,Festival Fits 103,Heritage Month,2026-09-30,2026-11-02,Live,Marketing,ROI readout
+CAMP-0104,Heritage Style Drop 104,Graduation/Occasionwear,2026-08-17,2026-09-19,Idea,Digital,creator shortlist
+CAMP-0105,Sustainable Denim Capsule 105,Winter,2026-08-06,2026-09-09,Idea,CRM,ROI readout
+CAMP-0106,Heritage Style Drop 106,Autumn,2027-03-10,2027-04-20,Live,Brand,homepage launch
+CAMP-0107,Coastal Summer Linen 107,Autumn,2026-10-08,2026-10-23,Completed,CRM,sentiment review
+CAMP-0108,Active Street Drop 108,Winter,2026-08-06,2026-09-09,In approval,Brand,homepage launch
+CAMP-0109,Street Utility Edit 109,Winter,2026-10-22,2026-11-11,In approval,Marketing,ROI readout
+CAMP-0110,Quiet Luxury Basics 110,Heritage Month,2027-01-20,2027-02-16,Creator sourcing,CRM,sentiment review
+CAMP-0111,Sustainable Denim Capsule 111,Summer,2027-02-24,2027-03-31,Brief drafted,Brand,content shoot
+CAMP-0112,Street Utility Edit 112,Summer,2026-11-02,2026-12-13,Brief drafted,CRM,ROI readout
+CAMP-0113,Back to Campus Fits 113,Winter,2027-03-05,2027-03-23,Live,Merchandising,content shoot
+CAMP-0114,Active Street Drop 114,Autumn,2026-10-07,2026-10-24,Creator sourcing,Brand,homepage launch
+CAMP-0115,Sustainable Denim Capsule 115,Heritage Month,2027-02-22,2027-03-22,Live,Creative Studio,brief sign-off
+CAMP-0116,Denim Revival 116,Holiday/Festive,2027-01-31,2027-02-20,Live,Digital,content shoot
+CAMP-0117,Active Street Drop 117,Black Friday,2026-08-18,2026-10-01,In approval,Merchandising,content shoot
+CAMP-0118,Denim Revival 118,Back to Campus,2027-02-20,2027-03-10,Completed,Digital,sentiment review
+CAMP-0119,Denim Revival 119,Summer,2027-02-22,2027-03-27,In approval,Creative Studio,sentiment review
+CAMP-0120,Sustainable Denim Capsule 120,Heritage Month,2026-10-20,2026-11-15,In approval,CRM,content shoot

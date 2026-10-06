@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.17",
+  "version": "1.0.0",
+  "id": "3e7f2a1b-c4d5-4e6f-9a8b-0c1d2e3f4a5b",
+  "packageName": "com.mrprice.retailai",
+  "developer": {
+    "name": "Mr Price Group",
+    "websiteUrl": "https://www.mrpricehome.com",
+    "privacyUrl": "https://www.mrpricehome.com/privacy-policy",
+    "termsOfUseUrl": "https://www.mrpricehome.com/terms-and-conditions"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "RetailAI",
+    "full": "RetailAI — Mr Price Marketing Intelligence"
+  },
+  "description": {
+    "short": "AI-powered creative & marketing intelligence.",
+    "full": "RetailAI unifies campaign strategy, creative talent, sentiment analysis, analytics, and portfolio management for Mr Price Group — powered by Microsoft Azure AI Foundry."
+  },
+  "accentColor": "#E31837",
+  "staticTabs": [
+    {
+      "entityId": "retailai-home",
+      "name": "RetailAI",
+      "contentUrl": "https://CONTAINER_APP_FQDN",
+      "websiteUrl": "https://CONTAINER_APP_FQDN",
+      "scopes": ["personal"]
+    },
+    {
+      "entityId": "retailai-dashboard",
+      "name": "Dashboard",
+      "contentUrl": "https://CONTAINER_APP_FQDN/#dashboard",
+      "websiteUrl": "https://CONTAINER_APP_FQDN/#dashboard",
+      "scopes": ["personal"]
+    },
+    {
+      "entityId": "retailai-talent",
+      "name": "Talent Hub",
+      "contentUrl": "https://CONTAINER_APP_FQDN/#talent",
+      "websiteUrl": "https://CONTAINER_APP_FQDN/#talent",
+      "scopes": ["personal"]
+    }
+  ],
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://CONTAINER_APP_FQDN/teams-config",
+      "canUpdateConfiguration": false,
+      "scopes": ["team", "groupChat"]
+    }
+  ],
+  "permissions": ["identity"],
+  "validDomains": [
+    "CONTAINER_APP_FQDN"
+  ],
+  "webApplicationInfo": {
+    "id": "AZURE_AD_APP_CLIENT_ID",
+    "resource": "https://CONTAINER_APP_FQDN"
+  }
+}

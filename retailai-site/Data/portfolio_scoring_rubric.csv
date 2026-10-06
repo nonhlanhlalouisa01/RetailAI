@@ -1,0 +1,8 @@
+criteria_id,criteria,weight_pct,description
+RUB-001,Brand alignment,20,"How well the applicant fits Mr Price value, youth relevance, and brand tone"
+RUB-002,Trend relevance,20,How strongly the applicant aligns to the selected seasonal trend
+RUB-003,Audience fit,15,Match between applicant audience and campaign target segment
+RUB-004,Content quality,15,"Quality of visuals, storytelling, styling, and creative consistency"
+RUB-005,Commercial readiness,15,"Ability to support campaign objectives, timelines, and expected deliverables"
+RUB-006,Affordability,10,Fit between cost band and campaign budget
+RUB-007,Risk review,5,"Checks for reputational, delivery, or brand-safety concerns"
